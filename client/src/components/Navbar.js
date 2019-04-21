@@ -16,7 +16,12 @@ class Navbar extends Component
             <ul className="navbar-nav">
                 <li className="nav-item">
                     <Link to='/login' className="nav-link">
-                        Login
+                        Login Admin
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link to='/login' className="nav-link">
+                        Login User
                     </Link>
                 </li>
                 <li className="nav-item">
@@ -35,7 +40,27 @@ class Navbar extends Component
             <ul className="navbar-nav">
                 <li className="nav-item">
                     <Link to="/profile" className="nav-link">
-                        User
+                        Users
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link to="/statistics" className="nav-link">
+                        Statistics
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link to="/notification" className="nav-link">
+                        Notifications
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link to="/order" className="nav-link">
+                        Order
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link to="/map" className="nav-link">
+                        Map
                     </Link>
                 </li>
                 <li className="nav-item">

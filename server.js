@@ -1,7 +1,11 @@
 var express = require("express");
 var cors = require("cors");
 var bodyParser=require("body-parser");
+
 var app=express();
+app.use(cors());
+app.options('*', cors());
+app.use(express.json());
 var port =process.env.PORT || 5000;
 
 app.use(bodyParser.json());
@@ -9,8 +13,10 @@ app.use(cors());
 app.use(bodyParser.urlencoded({extended: false}));
 
 var Users=require('./routes/Users');
+var Notifications=require('./routes/Notifications');
 
 app.use('/users',Users);
+app.use('/notifications',Notifications);
 
 app.get('/helo',(res,req)=>
 {

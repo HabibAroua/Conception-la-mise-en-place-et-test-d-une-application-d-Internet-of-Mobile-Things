@@ -4,6 +4,7 @@ import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
 export class MyMap extends  React.Component
 {
+
     render()
     {
         var points = [
@@ -22,7 +23,12 @@ export class MyMap extends  React.Component
                 <Map google={this.props.google}
 
                      className={'map'}
-                     zoom={10}>
+                     zoom={10}
+                     initialCenter={{
+                         lat: 36.897929,
+                         lng: 370.192633
+                     }}
+                >
                     <Marker
                         title={'The marker`s title will appear as a tooltip.'}
                         name={'SOMA'}
@@ -35,7 +41,9 @@ export class MyMap extends  React.Component
                     <Marker
                         title={'This is Tunisia'}
                         name={'Tunisia'}
-                        position={{lat: 36.8975331, lng: 10.1928377}} />
+                        position={{lat: 36.8975331, lng: 10.1928377}}
+
+                    />
                     <Marker
                         title={'The marker`s title wvxvxvx'}
                         name={'Your position'}
