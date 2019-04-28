@@ -34,11 +34,17 @@ class Login extends Component
         this.onSubmit = this.onSubmit.bind(this);
     }
 
-    onChange(e) {
+    onChange(e)
+    {
         this.setState({[e.target.name]: e.target.value})
     }
-
-    onSubmit(e) {
+    IsEmail(email)
+    {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }
+    onSubmit(e)
+    {
         e.preventDefault();
         const user =
             {
@@ -46,23 +52,53 @@ class Login extends Component
                 password: this.state.password
             }
 
-        this.login(user).then(res => {
-            e.preventDefault();
-            if (res)
+        if((user.email=="")&&(user.password==""))
             {
-                console.log("email and password are correct");
-               //this.props.history.push('/profile')
-                alert("email and password are correct");
-                window.location.reload();
-                document.location.href="http://localhost:3000/";
-
+                alert("Email and password are empty");
             }
             else
             {
-                alert("email and password are not correct")
-                console.log("email and password are not correct");
+                if(user.email=="")
+                {
+                    alert("Email is empty");
+                }
+                else
+                {
+                    if(user.password=="")
+                    {
+                        alert("Password is empty");
+                    }
+                    else
+                    {
+                        if(!this.IsEmail(user.email))
+                        {
+                            alert("Please write a valid email");
+                        }
+                        else
+                        {
+                            this.login(user).then(res =>
+                            {
+                                e.preventDefault();
+                                alert(res);
+                                if (res)
+                                {
+                                    this.props.history.push('/profile')
+                                    alert("email and password are correct");
+                                    document.location.href="http://localhost:3000/";
+                                }
+                                else
+                                {
+                                    if(res==null)
+                                    {
+                                        alert("email and password are not correct")
+                                        console.log("email and password are not correct");
+                                    }
+                                }
+                            })
+                        }
+                    }
+                }
             }
-        })
     }
 
     render() {
@@ -83,6 +119,7 @@ class Login extends Component
                                        name="email"
                                        placeholder="Enter Email"
                                        value={this.state.email}
+                                       required
                                        onChange={this.onChange}
                                 />
                             </div>
@@ -95,6 +132,7 @@ class Login extends Component
                                        name="password"
                                        placeholder="Enter Password"
                                        value={this.state.password}
+                                       required
                                        onChange={this.onChange}
                                 />
                             </div>

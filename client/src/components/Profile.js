@@ -18,7 +18,8 @@ class Profile extends Component
     {
         const token=localStorage.usertoken;
         const decode=jwt_decode(token);
-        console.log("the val is  "+decode.password);
+        console.log("the token is "+token);
+        console.log("the val is  "+decode.first_name);
         this.setState(
             {
                 first_name: decode.first_name,
