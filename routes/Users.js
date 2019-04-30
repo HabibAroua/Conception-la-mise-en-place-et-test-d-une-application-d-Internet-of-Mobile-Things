@@ -3,7 +3,6 @@ const users = express.Router()
 const jwt = require('jsonwebtoken')
 const cors=require('cors')
 const bcrypt=require('bcrypt')
-
 const User=require("../models/User")
 
 users.use(cors())
