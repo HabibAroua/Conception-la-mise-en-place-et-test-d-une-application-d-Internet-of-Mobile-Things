@@ -1,7 +1,5 @@
 import React , {Component} from 'react'
-//import { login } from './UserFunctions'
 import axios from "axios";
-
 
 class Login extends Component
 {

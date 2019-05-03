@@ -4,6 +4,16 @@ const jwt = require('jsonwebtoken')
 const cors=require('cors')
 const bcrypt=require('bcrypt')
 const User=require("../models/User")
+var mysql = require('mysql');
+const db=mysql.createConnection
+(
+    {
+        host: 'localhost',
+        user: 'root',
+        password:'',
+        database: 'iomt'
+    }
+);
 
 users.use(cors())
 
@@ -21,13 +31,15 @@ users.post('/register',(req,res)=>
             first_name:req.body.first_name,
             last_name:req.body.last_name,
             email:req.body.email,
+            rule:1,
             password:req.body.password,
             created: today
         }
     User.findOne({
-        where: {
-            email:req.body.email
-        }
+        where:
+            {
+                email: req.body.email
+            }
     })
         .then(user=>{
             if(!user)
@@ -36,13 +48,17 @@ users.post('/register',(req,res)=>
                     userData.password=hash
                     User.create(userData)
                         .then(user =>{
-                            res.json({status: user.email+ ' registered'})
+                            //res.json({status: user.email+ ' registered'})
+                            console.log("res.json({status: user.email+ ' registered'})");
+                            res.send("res.json({status: user.email+ ' registered'})")
                         })
                 })
             }
             else
             {
-                res.json({error: "User already exists"})
+                //res.json({error: "User already exists"})
+                res.send("error: User already exists");
+                console.log("error: User already exists");
             }
         })
         .catch(err=>{
@@ -85,12 +101,21 @@ users.post('/login',(req,res)=>
             {
                 console.log("User is not exist");
                 res.status(400).json({error: 'User does not exist'})
-
             }
         })
         .catch(err=>
         {
             res.status(400).json({error: err})
         })
+})
+
+users.get('/AllUsers',(req,res)=>
+{
+    let sql='SELECT * FROM users';
+    let query=db.query(sql,(err,results)=>
+    {
+        console.log(results);
+        res.send(results);
+    });
 })
 module.exports =users

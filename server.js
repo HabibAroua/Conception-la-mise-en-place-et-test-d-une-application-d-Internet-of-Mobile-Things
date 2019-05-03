@@ -13,8 +13,10 @@ app.use(cors());
 app.use(bodyParser.urlencoded({extended: false}));
 
 var Users=require('./routes/Users');
+var Objects=require('./routes/Objects')
 
 app.use('/users',Users);
+app.use('/objects',Objects);
 
 app.get('/helo',(res,req)=>
 {
