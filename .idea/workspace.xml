@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8717a64f-5e7f-4d9a-bd6a-f9880b3ce112" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/routes/Users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Users.js" afterDir="false" />
-    </list>
+    <list default="true" id="8717a64f-5e7f-4d9a-bd6a-f9880b3ce112" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -18,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/Users.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="157" column="118" selection-start-line="157" selection-start-column="118" selection-end-line="157" selection-end-column="118" />
+            <state relative-caret-position="184">
+              <caret line="155" column="39" lean-forward="true" selection-start-line="155" selection-start-column="39" selection-end-line="155" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -117,7 +115,7 @@
             <path>
               <item name="Conception-la-mise-en-place-et-test-d-une-application-d-Internet-of-Mobile-Things" type="b2602c69:ProjectViewProjectNode" />
               <item name="Conception-la-mise-en-place-et-test-d-une-application-d-Internet-of-Mobile-Things" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -185,16 +183,15 @@
       <workItem from="1556984875391" duration="5547000" />
       <workItem from="1557090737314" duration="8051000" />
       <workItem from="1557133034083" duration="1711000" />
-      <workItem from="1557164332319" duration="6593000" />
+      <workItem from="1557164332319" duration="7629000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128163000" />
+    <option name="totallyTimeSpent" value="129199000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16741072" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -369,8 +366,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/Users.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="157" column="118" selection-start-line="157" selection-start-column="118" selection-end-line="157" selection-end-column="118" />
+        <state relative-caret-position="184">
+          <caret line="155" column="39" lean-forward="true" selection-start-line="155" selection-start-column="39" selection-end-line="155" selection-end-column="39" />
         </state>
       </provider>
     </entry>
