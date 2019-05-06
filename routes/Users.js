@@ -54,6 +54,7 @@ users.post('/register',(req,res)=>
                         })
                 })
             }
+
             else
             {
                 //res.json({error: "User already exists"})
@@ -114,8 +115,26 @@ users.get('/AllUsers',(req,res)=>
     let sql='SELECT * FROM users';
     let query=db.query(sql,(err,results)=>
     {
-        console.log(results);
         res.send(results);
     });
+})
+
+users.get('/updateUsers',(req,res)=>
+{
+    const userData =
+        {
+            first_name:req.body.first_name,
+            last_name:req.body.last_name,
+            email:req.body.email,
+            rule:1,
+            password:req.body.password
+        }
+        //$2b$10$ADQJEK5cDLd5vedn5Ryfx.TI0nj5kgN1gotfs.bjzwYou64neQ3BK
+        //$2b$10$ADQJEK5cDLd5vedn5Ryfx.TI0nj5kgN1gotfs.bjzwYou64neQ3BK
+
+    bcrypt.hash("123", 10,(err,hash)=> {
+        userData.password = hash
+        res.send(userData.password)
+    })
 })
 module.exports =users

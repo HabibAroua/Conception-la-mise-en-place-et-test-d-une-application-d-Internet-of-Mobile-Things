@@ -1,23 +1,45 @@
 import React from 'react';
-
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import axios from "axios";
 
 export class MyMap extends  React.Component
 {
-
+    state =
+        {
+            objects : []
+        }
+    handleClick(param, e)
+    {
+        alert('Parameter'+ param);
+    }
+    componentDidMount()
+    {
+        axios.get("http://localhost:5000/objects/AllObjects")
+            .then(res=>
+            {
+                console.log(res.data);
+                this.setState(
+                    {
+                        objects : res.data
+                    }
+                )
+            });
+    }
     render()
     {
-        var points = [
-            { lat: 36.8975331, lng: 10.1926377 },
-            { lat: 36.8975331, lng: 10.1926377 },
-            { lat: 36.8975331, lng: 10.1926377 },
-            { lat: 36.8975331, lng: 10.1926377 }
-        ]
-        var bounds = new this.props.google.maps.LatLngBounds();
-        for (var i = 0; i < points.length; i++)
+        const {objects}=this.state;
+        const objectList=objects.map(object=>
         {
-            bounds.extend(points[i]);
-        }
+            return (
+                <Marker
+                    title={object.wording}
+                    name={object.id}
+                    position={{lat: object.latitude, lng: object.longitude}}
+                    onClick={this.handleClick.bind(this, object.wording)}
+                />
+            )
+        })
+
         return(
             <div style={{width: '50px', height: '50px'}}>
                 <Map google={this.props.google}
@@ -29,34 +51,7 @@ export class MyMap extends  React.Component
                          lng: 370.192633
                      }}
                 >
-                    <Marker
-                        title={'The marker`s title will appear as a tooltip.'}
-                        name={'SOMA'}
-                        position={{lat: 36.8975331, lng: 10.1926377}} />
-                    <Marker
-                        title={'The marker`s title will appear as a '}
-                        name={'Dolores park'}
-                        position={{lat: 36.8975731, lng: 10.1926577}} />
-                    <Marker />
-                    <Marker
-                        title={'This is Tunisia'}
-                        name={'Tunisia'}
-                        position={{lat: 36.8975331, lng: 10.1928377}}
-
-                    />
-                    <Marker
-                        title={'The marker`s title wvxvxvx'}
-                        name={'Your position'}
-                        position={{lat: 36.8975331, lng: 10.1926389}}
-                        icon=
-                            {
-                                {
-                                    url: "/path/to/custom_icon.png",
-                                    anchor: new window.google.maps.Point(32,32),
-                                    scaledSize: new window.google.maps.Size(64,64)
-                                }
-                            }
-                    />
+                    {objectList}
                 </Map>
             </div>
         )

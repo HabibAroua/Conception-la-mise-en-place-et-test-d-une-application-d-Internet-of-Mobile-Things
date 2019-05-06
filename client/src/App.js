@@ -7,6 +7,7 @@ import Login from './components/Login';
 import Profile from './components/Profile';
 import Register from './components/Register';
 import Map from './components/MyMap';
+import AllObjects from './components/AllObjects';
 class App extends Component {
   render() {
     return (
@@ -18,6 +19,7 @@ class App extends Component {
            <Route exact path="/register" component={Register} />
            <Route exact path="/login" component={Login} />
            <Route exact path="/profile" component={Profile} />
+           <Route exact path="/allObject" component={AllObjects} />
            <Route exact path="/map" component={Map} />
 
          </div>

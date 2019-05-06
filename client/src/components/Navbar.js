@@ -31,6 +31,11 @@ class Navbar extends Component
                     </Link>
                 </li>
                 <li className="nav-item">
+                    <Link to="/allObject" className="nav-link">
+                        All Objects
+                    </Link>
+                </li>
+                <li className="nav-item">
                     <Link to="/map" className="nav-link">
                         Map
                     </Link>
@@ -89,8 +94,13 @@ class Navbar extends Component
                     </Link>
                 </li>
                 <li className="nav-item">
+                    <Link to="/allObject" className="nav-link">
+                        All Objects
+                    </Link>
+                </li>
+                <li className="nav-item">
                     <Link to="/map" className="nav-link">
-                        Map
+                        Map1
                     </Link>
                 </li>
                 <li className="nav-item">
