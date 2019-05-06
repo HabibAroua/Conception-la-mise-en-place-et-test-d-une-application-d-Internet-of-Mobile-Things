@@ -47,17 +47,15 @@ users.post('/register',(req,res)=>
                 bcrypt.hash(req.body.password, 10,(err,hash)=>{
                     userData.password=hash
                     User.create(userData)
-                        .then(user =>{
-                            //res.json({status: user.email+ ' registered'})
+                        .then(user =>
+                        {
                             console.log("res.json({status: user.email+ ' registered'})");
                             res.send("res.json({status: user.email+ ' registered'})")
                         })
                 })
             }
-
             else
             {
-                //res.json({error: "User already exists"})
                 res.send("error: User already exists");
                 console.log("error: User already exists");
             }
@@ -69,7 +67,6 @@ users.post('/register',(req,res)=>
 
 users.post('/login',(req,res)=>
 {
-
     User.findOne(
         {
             where:
@@ -117,7 +114,7 @@ users.get('/AllUsers',(req,res)=>
     });
 })
 
-users.get('/updateUsers',(req,res)=>
+users.get('/updateUsersPassword',(req,res)=>
 {
     const userData =
         {
@@ -130,9 +127,40 @@ users.get('/updateUsers',(req,res)=>
         //$2b$10$ADQJEK5cDLd5vedn5Ryfx.TI0nj5kgN1gotfs.bjzwYou64neQ3BK
         //$2b$10$ADQJEK5cDLd5vedn5Ryfx.TI0nj5kgN1gotfs.bjzwYou64neQ3BK
 
-    bcrypt.hash("123", 10,(err,hash)=> {
+    bcrypt.hash("123", 10,(err,hash)=>
+    {
         userData.password = hash
         res.send(userData.password)
+        let newTitle='Update post'
+        let sql=`UPDATE users SET title = '${newTitle}' WHERE id=${req.params.id}`;
+        let query=db.query(sql,(err,result)=>
+        {
+            if(err)throw err;
+            console.log(result);
+            res.send('Post updated ...');
+        });
     })
+})
+
+users.post('/updateUsers',(req,res)=>
+{
+    const userData =
+    {
+        first_name:req.body.first_name,
+        last_name:req.body.last_name,
+        email:req.body.email,
+        rule:1,
+        password:req.body.password
+    }
+
+    let first_name=userData.first_name;
+    let last_name=userData.last_name;
+    let sql=`UPDATE users SET first_name = '${first_name}' , last_name='${last_name}' WHERE email='${userData.email}' `;
+    let query=db.query(sql,(err,result)=>
+    {
+        if(err)throw err;
+        console.log(result);
+        res.send('Post updated ...');
+    });
 })
 module.exports =users
