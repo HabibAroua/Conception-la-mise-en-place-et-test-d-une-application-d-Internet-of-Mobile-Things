@@ -89,12 +89,10 @@ users.post('/login',(req,res)=>
                     })
                     console.log("password is correct inst 2");
                     res.send(token)
-                    //res.send("Email and password are correct");
                 }
                 else
                 {
                     res.status(400).json({error: 'Password is not correct'})
-                    //res.send("User does not exist");
                     console.log("password is not correct")
                 }
             }
