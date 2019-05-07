@@ -8,9 +8,13 @@ export class MyMap extends  React.Component
         {
             objects : []
         }
-    handleClick(param, e)
+    handleClick(param1,param2, e)
     {
-        alert('Parameter'+ param);
+        window.Swal.fire(
+            'Wording : '+param1+'\n State : '+param2+'% \n',
+            '',
+            'info'
+        )
     }
     componentDidMount()
     {
@@ -35,7 +39,7 @@ export class MyMap extends  React.Component
                     title={object.wording}
                     name={object.id}
                     position={{lat: object.latitude, lng: object.longitude}}
-                    onClick={this.handleClick.bind(this, object.wording)}
+                    onClick={this.handleClick.bind(this, object.wording,object.state)}
                 />
             )
         })
