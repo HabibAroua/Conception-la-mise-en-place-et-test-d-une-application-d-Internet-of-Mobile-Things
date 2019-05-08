@@ -15,6 +15,7 @@ const db=mysql.createConnection
     }
 );
 
+
 users.use(cors())
 
 process.env.SECRET_KEY='secret'
@@ -114,34 +115,6 @@ users.get('/AllUsers',(req,res)=>
     });
 })
 
-users.get('/updateUsersPassword',(req,res)=>
-{
-    const userData =
-        {
-            first_name:req.body.first_name,
-            last_name:req.body.last_name,
-            email:req.body.email,
-            rule:1,
-            password:req.body.password
-        }
-        //$2b$10$ADQJEK5cDLd5vedn5Ryfx.TI0nj5kgN1gotfs.bjzwYou64neQ3BK
-        //$2b$10$ADQJEK5cDLd5vedn5Ryfx.TI0nj5kgN1gotfs.bjzwYou64neQ3BK
-
-    bcrypt.hash("123", 10,(err,hash)=>
-    {
-        userData.password = hash
-        res.send(userData.password)
-        let newTitle='Update post'
-        let sql=`UPDATE users SET title = '${newTitle}' WHERE id=${req.params.id}`;
-        let query=db.query(sql,(err,result)=>
-        {
-            if(err)throw err;
-            console.log(result);
-            res.send('Post updated ...');
-        });
-    })
-})
-
 users.post('/updateUsers',(req,res)=>
 {
     const userData =
@@ -160,7 +133,30 @@ users.post('/updateUsers',(req,res)=>
     {
         if(err)throw err;
         console.log(result);
-        res.send('Post updated ...');
+        res.send('user updated ...');
     });
+})
+
+
+users.post('/updateUsersPassword',(req,res)=>
+{
+    var test=((bcrypt.compareSync(req.body.password,req.body.cryptPassword)));
+    if(test)
+    {
+        bcrypt.hash(req.body.newPassword, 10,(err,hash)=>
+        {
+            let sql = `UPDATE users SET password = '${hash}' WHERE email='${req.body.email}' `;
+            let query = db.query(sql, (err, result) =>
+            {
+                if (err) throw err;
+                console.log(result);
+                res.send('Password updated ...');
+            });
+        });
+    }
+    else
+    {
+        res.send("Password is not correct")
+    }
 })
 module.exports =users
