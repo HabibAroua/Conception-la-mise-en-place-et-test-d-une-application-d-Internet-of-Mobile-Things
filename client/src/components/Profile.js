@@ -33,11 +33,13 @@ class Profile extends Component
             last_name:'',
             email:'',
             password:'',
+            oldPassword:'',
             newPassword:'',
             confirmPassword:''
         }
         this.onChange = this.onChange.bind(this);
         this.btUpdate = this.btUpdate.bind(this);
+        this.btUpdatePassword =this.btUpdatePassword.bind(this);
     }
 
     onChange(e)
@@ -53,10 +55,67 @@ class Profile extends Component
                 last_name:this.state.last_name,
                 email: this.state.email
             }
+
         this.updateInformation(newUser).then(res =>
         {
 
         })
+    }
+
+    btUpdatePassword()
+    {
+        const newUser=
+        {
+            oldPassword: this.state.oldPassword,
+            newPassword:this.state.newPassword,
+            confirmPassword: this.state.confirmPassword
+        }
+
+        if((newUser.oldPassword=="") && (newUser.newPassword=="") && (newUser.confirmPassword==""))
+        {
+            window.Swal.fire
+            (
+                'Error!',
+                "All values are empty",
+                'error'
+            )
+        }
+        else
+        {
+            if(newUser.oldPassword=="")
+            {
+                window.Swal.fire
+                (
+                    'Error!',
+                    "You should enter your old password",
+                    'error'
+                )
+            }
+            else
+            {
+                if(newUser.newPassword=="")
+                {
+                    window.Swal.fire
+                    (
+                        'Error!',
+                        "You should enter your new password",
+                        'error'
+                    )
+                }
+                else
+                {
+                    if(newUser.confirmPassword=="")
+                    {
+                        window.Swal.fire
+                        (
+                            'Error!',
+                            "You should confirm your new password",
+                            'error'
+                        )
+                    }
+                }
+            }
+        }
     }
 
 
@@ -98,14 +157,14 @@ class Profile extends Component
                     <h5>Update my password</h5>
                     <table>
                         <tr>
-                            <td><input type="text" placeholder="Old Password" /> </td>
+                            <td><input type="text" placeholder="Old Password" name="oldPassword" value={this.state.oldPassword} onChange={this.onChange} /> </td>
                             <td>  </td>
-                            <td><input type="text" placeholder="New Password" /></td>
+                            <td><input type="text" placeholder="New Password" name="newPassword" value={this.state.newPassword} onChange={this.onChange}/></td>
                             <td>  </td>
-                            <td><input type="text" placeholder="Confirm Password" /></td>
+                            <td><input type="text" placeholder="Confirm Password" name="confirmPassword" value={this.state.confirmPassword} onChange={this.onChange} /></td>
                             <td>  </td>
                             <td>
-                                <button   type="button" className="btn btn-primary btn-sm">Submit</button>
+                                <button   type="button" className="btn btn-primary btn-sm" onClick={this.btUpdatePassword}>Submit</button>
                             </td>
                         </tr>
                     </table>
@@ -154,7 +213,7 @@ class Profile extends Component
                              </tr>
                         </tbody>
                     </table>
-                    <p>{this.state.first_name}</p>
+                    <p>{this.state.password}</p>
                     <div id="updateInterface">
                         {userUpdate}
                     </div>
