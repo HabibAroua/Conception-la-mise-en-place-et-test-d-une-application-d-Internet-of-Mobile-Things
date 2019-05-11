@@ -76,12 +76,12 @@ class Register extends Component
         return (
             <div className="container">
                 <div className="row">
-                    <div className="col-md mt-5 mx-auto">
+                    <div className="col-md mt-6 mx-auto">
                         <form noValidate onSubmit={this.onSubmit}>
-                            <h1 className="h3 mb-3 font-weight-normal">
+                            <h1 className="h3 mb-6 font-weight-normal">
                                 Register
                             </h1>
-                            <div className="form-group col-lg-3 col-md-3 col-sm-xs-12">
+                            <div className="form-group col-lg-6 col-md-3 col-sm-xs-12">
                                 <label htmlFor="first_name">
                                     First name
                                 </label>
@@ -93,7 +93,7 @@ class Register extends Component
                                        onChange={this.onChange}
                                 />
                             </div>
-                            <div className="form-group col-lg-3 col-md-3 col-sm-xs-12">
+                            <div className="form-group col-lg-6 col-md-3 col-sm-xs-12">
                                 <label htmlFor="last_name">
                                     Last name
                                 </label>
@@ -105,7 +105,7 @@ class Register extends Component
                                        onChange={this.onChange}
                                 />
                             </div>
-                            <div className="form-group col-lg-3 col-md-3 col-sm-xs-12">
+                            <div className="form-group col-lg-6 col-md-3 col-sm-xs-12">
                                 <label htmlFor="email">
                                     Email Address
                                 </label>
@@ -117,7 +117,7 @@ class Register extends Component
                                        onChange={this.onChange}
                                 />
                             </div>
-                            <div className="form-group col-lg-3 col-md-3 col-sm-xs-12">
+                            <div className="form-group col-lg-6 col-md-3 col-sm-xs-12">
                                 <label htmlFor="password">
                                     Password
                                 </label>
@@ -129,7 +129,7 @@ class Register extends Component
                                        onChange={this.onChange}
                                 />
                             </div>
-                            <div className="form-group col-lg-3 col-md-3 col-sm-xs-12">
+                            <div className="form-group col-lg-6 col-md-3 col-sm-xs-12">
                                 <label htmlFor="password">
                                     Confirm your Password
                                 </label>
@@ -147,6 +147,9 @@ class Register extends Component
                                 Register
                             </button>
                         </form>
+                    </div>
+                    <div className="col-md mt-6 mx-auto">
+                        <h1>Hello world</h1>
                     </div>
                 </div>
             </div>
