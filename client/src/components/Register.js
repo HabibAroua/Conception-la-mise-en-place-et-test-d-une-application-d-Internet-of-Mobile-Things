@@ -36,13 +36,15 @@ class Register extends Component
                 }
             })
     }
-    init_value()
+    init_value(e)
     {
         this.state.first_name='';
         this.state.last_name='';
         this.state.email= '';
         this.state.password= '';
         this.state.confirmPassword='';
+        this.setState({[e.target.name]: ''})
+
     }
 
     constructor()
@@ -167,7 +169,6 @@ class Register extends Component
 
                                         })
                                         this.init_value();
-                                        this.setState({[e.target.name]: ''})
                                         window.location.reload();
                                     }
                                 }
@@ -282,12 +283,26 @@ class Register extends Component
                                        onChange={this.onChange}
                                 />
                             </div>
-                            <div className="form-group col-lg-8 col-md-3 col-sm-xs-12">
-                                    <button type="submit"
-                                            className="btn btn-lg btn-primary btn-block col-lg-3 col-md-3 col-sm-xs-12"
-                                    >
-                                        Add
-                                    </button>
+                            <div className="form-group col-lg-4">
+                                <table>
+                                    <tr>
+                                        <th>
+                                            <button type="submit"
+                                                    className="btn btn-lg btn-primary btn-block "
+                                            >
+                                                Add new user
+                                            </button>
+                                        </th>
+                                        <th>
+                                            <button type="reset"
+                                                    className="btn btn-lg btn-primary btn-block "
+                                                    onClick={this.init_value}
+                                            >
+                                                Init all values
+                                            </button>
+                                        </th>
+                                    </tr>
+                                </table>
                             </div>
                         </form>
                     </div>
