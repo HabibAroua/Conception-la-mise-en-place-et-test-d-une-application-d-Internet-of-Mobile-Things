@@ -46,7 +46,12 @@ class Navbar extends Component
             <ul className="navbar-nav">
                 <li className="nav-item">
                     <Link to="/profile" className="nav-link">
-                        Users
+                        My Profile
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link to="/register" className="nav-link">
+                        User Management
                     </Link>
                 </li>
                 <li className="nav-item">

@@ -161,4 +161,13 @@ users.post('/updateUsersPassword',(req,res)=>
         console.log('Password is not correct');
     }
 })
+
+users.get('/AllSimpleUsers',(req,res)=>
+{
+    let sql='SELECT * FROM users where rule=1';
+    let query=db.query(sql,(err,results)=>
+    {
+        res.send(results);
+    });
+});
 module.exports =users
