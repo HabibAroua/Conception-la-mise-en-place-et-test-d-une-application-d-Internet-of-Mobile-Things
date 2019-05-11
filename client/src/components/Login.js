@@ -52,25 +52,45 @@ class Login extends Component
 
         if((user.email=="")&&(user.password==""))
             {
-                alert("Email and password are empty");
+                window.Swal.fire
+                (
+                    'Error',
+                    'Email and password are empty',
+                    'error'
+                )
             }
             else
             {
                 if(user.email=="")
                 {
-                    alert("Email is empty");
+                    window.Swal.fire
+                    (
+                        'Error',
+                        'Email is empty',
+                        'error'
+                    )
                 }
                 else
                 {
                     if(user.password=="")
                     {
-                        alert("Password is empty");
+                        window.Swal.fire
+                        (
+                            'Error',
+                            'Password is empty',
+                            'error'
+                        )
                     }
                     else
                     {
                         if(!this.IsEmail(user.email))
                         {
-                            alert("Please write a valid email");
+                            window.Swal.fire
+                            (
+                                'Error',
+                                'Please write a valid email',
+                                'error'
+                            )
                         }
                         else
                         {
@@ -82,7 +102,6 @@ class Login extends Component
                                 {
                                     this.props.history.push('/profile')
                                     alert("email and password are correct");
-                                    document.location.href="http://localhost:3000/";
                                 }
                                 else
                                 {

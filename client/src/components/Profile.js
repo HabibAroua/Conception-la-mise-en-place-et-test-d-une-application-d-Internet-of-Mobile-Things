@@ -24,6 +24,43 @@ class Profile extends Component
             })
     }
 
+    updatePassword(newUser)
+    {
+        return axios
+            .post('http://localhost:5000/users/updateUsersPassword',{
+                email:this.state.email,
+                password:newUser.oldPassword,
+                cryptPassword:this.state.password,
+                newPassword:this.state.newPassword
+            })
+            .then(res =>
+            {
+                if(res.data=="x1")
+                {
+                    window.Swal.fire
+                    (
+                        'Good job!',
+                        'Password updated',
+                        'success'
+                    )
+                }
+                else
+                {
+                    if(res.data=="x2")
+                    {
+                        window.Swal.fire
+                        (
+                            'Error!',
+                            'Password is not correct',
+                            'error'
+
+                        )
+                    }
+                }
+            })
+    }
+
+
     constructor()
     {
         super();
@@ -50,16 +87,53 @@ class Profile extends Component
     btUpdate()
     {
         const newUser=
-            {
-                first_name: this.state.first_name,
-                last_name:this.state.last_name,
-                email: this.state.email
-            }
-
-        this.updateInformation(newUser).then(res =>
         {
+            first_name: this.state.first_name,
+            last_name:this.state.last_name,
+            email: this.state.email
+        }
+        if((newUser.first_name=="") && (newUser.last_name==""))
+        {
+            window.Swal.fire
+            (
+                'Error',
+                'All values are empty',
+                'error'
+            )
+        }
+        else
+        {
+            if(newUser.first_name=="")
+            {
+                window.Swal.fire
+                (
+                    'Error',
+                    'Your first name is empty',
+                    'error'
+                )
+            }
+            else
+            {
+                if(newUser.last_name=="")
+                {
+                    window.Swal.fire
+                    (
+                        'Error',
+                        'Your last name is empty ',
+                        'error'
+                    )
+                }
+                else
+                {
+                    this.updateInformation(newUser).then(res =>
+                    {
 
-        })
+                    })
+                    localStorage.removeItem('usertoken');
+                    this.props.history.push('/');
+                }
+            }
+        }
     }
 
     btUpdatePassword()
@@ -104,14 +178,35 @@ class Profile extends Component
                 }
                 else
                 {
-                    if(newUser.confirmPassword=="")
+                    if(newUser.newPassword!=newUser.confirmPassword)
                     {
                         window.Swal.fire
                         (
                             'Error!',
-                            "You should confirm your new password",
+                            "your confirm password is not correct",
                             'error'
                         )
+                    }
+                    else
+                    {
+                        if(newUser.confirmPassword=="")
+                        {
+                            window.Swal.fire
+                            (
+                                'Error!',
+                                "You should confirm your new password",
+                                'error'
+                            )
+                        }
+                        else
+                        {
+                            this.updatePassword(newUser).then(res =>
+                            {
+
+                            })
+                            localStorage.removeItem('usertoken');
+                            this.props.history.push('/');
+                        }
                     }
                 }
             }
@@ -157,11 +252,11 @@ class Profile extends Component
                     <h5>Update my password</h5>
                     <table>
                         <tr>
-                            <td><input type="text" placeholder="Old Password" name="oldPassword" value={this.state.oldPassword} onChange={this.onChange} /> </td>
+                            <td><input type="password" placeholder="Old Password" name="oldPassword" value={this.state.oldPassword} onChange={this.onChange} /> </td>
                             <td>  </td>
-                            <td><input type="text" placeholder="New Password" name="newPassword" value={this.state.newPassword} onChange={this.onChange}/></td>
+                            <td><input type="password" placeholder="New Password" name="newPassword" value={this.state.newPassword} onChange={this.onChange}/></td>
                             <td>  </td>
-                            <td><input type="text" placeholder="Confirm Password" name="confirmPassword" value={this.state.confirmPassword} onChange={this.onChange} /></td>
+                            <td><input type="password" placeholder="Confirm Password" name="confirmPassword" value={this.state.confirmPassword} onChange={this.onChange} /></td>
                             <td>  </td>
                             <td>
                                 <button   type="button" className="btn btn-primary btn-sm" onClick={this.btUpdatePassword}>Submit</button>

@@ -150,13 +150,15 @@ users.post('/updateUsersPassword',(req,res)=>
             {
                 if (err) throw err;
                 console.log(result);
-                res.send('Password updated ...');
+                res.send('x1'); //Password updated
+                console.log('Password updated')
             });
         });
     }
     else
     {
-        res.send("Password is not correct")
+        res.send("x2") //Password is not correct
+        console.log('Password is not correct');
     }
 })
 module.exports =users
