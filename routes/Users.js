@@ -51,13 +51,13 @@ users.post('/register',(req,res)=>
                         .then(user =>
                         {
                             console.log("res.json({status: user.email+ ' registered'})");
-                            res.send("res.json({status: user.email+ ' registered'})")
+                            res.send("x1")
                         })
                 })
             }
             else
             {
-                res.send("error: User already exists");
+                res.send("x2");
                 console.log("error: User already exists");
             }
         })

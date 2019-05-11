@@ -13,8 +13,27 @@ class Register extends Component
                 password:newUser.password
             })
             .then(res =>{
-                console.log("Registered")
-                alert(res.data)
+                if(res.data=="x1")
+                {
+                    window.Swal.fire
+                    (
+                        'Good job',
+                        "User added ..",
+                        'success'
+                    )
+                }
+                else
+                {
+                    if(res.data=="x2")
+                    {
+                        window.Swal.fire
+                        (
+                            'Good job',
+                            "User already exists",
+                            'error'
+                        )
+                    }
+                }
             })
     }
     constructor()
@@ -26,11 +45,18 @@ class Register extends Component
                 last_name:'',
                 email: '',
                 password: '',
-                confirmPassword:''
+                confirmPassword:'',
+                users:[]
             }
 
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
+        this.onDelete=this.onDelete.bind(this);
+    }
+
+    onDelete(id ,e)
+    {
+        alert("the id is "+id);
     }
 
     onChange(e)
@@ -51,37 +77,139 @@ class Register extends Component
             }
             if((user.first_name=="")&&( user.last_name=="")&&(user.email=="") && (user.password=="") && (user.confirmPassword==""))
             {
-                alert("All values are empty");
+                window.Swal.fire
+                (
+                    'Error!',
+                    "All values are empty",
+                    'error'
+                )
             }
             else
             {
+                if(user.first_name=="")
+                {
+                    window.Swal.fire
+                    (
+                        'Error!',
+                        "The first name is empty",
+                        'error'
+                    )
+                }
+                else
+                {
+                    if(user.last_name=="")
+                    {
+                        window.Swal.fire
+                        (
+                            'Error!',
+                            "The last name is empty",
+                            'error'
+                        )
+                    }
+                    else
+                    {
+                        if(user.email=="")
+                        {
+                            window.Swal.fire
+                            (
+                                'Error!',
+                                "Email is empty",
+                                'error'
+                            )
+                        }
+                        else
+                        {
+                            if(user.password=="")
+                            {
+                                window.Swal.fire
+                                (
+                                    'Error!',
+                                    "Password is empty",
+                                    'error'
+                                )
+                            }
+                            else
+                            {
+                                if(user.confirmPassword=="")
+                                {
+                                    window.Swal.fire
+                                    (
+                                        'Error!',
+                                        'You should confirm the password',
+                                        'error'
+                                    )
+                                }
+                                else
+                                {
+                                    if(user.password!=user.confirmPassword)
+                                    {
+                                        window.Swal.fire
+                                        (
+                                            'Error!',
+                                            'your confirm password is not correct',
+                                            'error'
+                                        )
+                                    }
+                                    else
+                                    {
+                                        this.register(user).then(res =>
+                                        {
 
+                                        })
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
-        this.register(user).then(res =>
-        {
-            if (res)
+    }
+
+    componentDidMount()
+    {
+        axios.get("http://localhost:5000/users/AllSimpleUsers")
+            .then(res=>
             {
-                alert("Registered")
-                this.props.history('/login');
-            }
-            else
-            {
-                alert("error");
-            }
-        })
+                this.setState(
+                    {
+                        users : res.data
+                    }
+                )
+            });
     }
 
     render()
     {
+        const {users}=this.state;
+        const userList=users.map(user=>
+        {
+            return (
+                <tr>
+                    <td>{user.id}</td>
+                    <td>{user.first_name}</td>
+                    <td>{user.last_name}</td>
+                    <td>{user.email}</td>
+                    <td>
+                        <a href="#" className="btn btn-primary a-btn-slide-text"    onClick={this.onDelete.bind(this, user.id)}
+                        >
+                            <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                            <span><strong>Delete</strong></span>
+                        </a>
+                    </td>
+                </tr>
+            )
+        })
         return (
             <div className="container">
                 <div className="row">
-                    <div className="col-md mt-6 mx-auto">
+                    <div className="col-md mt-8 mx-auto">
                         <form noValidate onSubmit={this.onSubmit}>
-                            <h1 className="h3 mb-6 font-weight-normal">
-                                Register
-                            </h1>
-                            <div className="form-group col-lg-6 col-md-3 col-sm-xs-12">
+                            <div className="form-group col-lg-10 col-md-3 col-sm-xs-12">
+                                <center>
+                                    <h1 className="h3 mb-6 font-weight-normal">
+                                        Add new user
+                                    </h1>
+                                </center>
                                 <label htmlFor="first_name">
                                     First name
                                 </label>
@@ -93,7 +221,7 @@ class Register extends Component
                                        onChange={this.onChange}
                                 />
                             </div>
-                            <div className="form-group col-lg-6 col-md-3 col-sm-xs-12">
+                            <div className="form-group col-lg-10 col-md-3 col-sm-xs-12">
                                 <label htmlFor="last_name">
                                     Last name
                                 </label>
@@ -105,7 +233,7 @@ class Register extends Component
                                        onChange={this.onChange}
                                 />
                             </div>
-                            <div className="form-group col-lg-6 col-md-3 col-sm-xs-12">
+                            <div className="form-group col-lg-10 col-md-3 col-sm-xs-12">
                                 <label htmlFor="email">
                                     Email Address
                                 </label>
@@ -117,7 +245,7 @@ class Register extends Component
                                        onChange={this.onChange}
                                 />
                             </div>
-                            <div className="form-group col-lg-6 col-md-3 col-sm-xs-12">
+                            <div className="form-group col-lg-10 col-md-3 col-sm-xs-12">
                                 <label htmlFor="password">
                                     Password
                                 </label>
@@ -129,7 +257,7 @@ class Register extends Component
                                        onChange={this.onChange}
                                 />
                             </div>
-                            <div className="form-group col-lg-6 col-md-3 col-sm-xs-12">
+                            <div className="form-group col-lg-10 col-md-3 col-sm-xs-12">
                                 <label htmlFor="password">
                                     Confirm your Password
                                 </label>
@@ -141,15 +269,35 @@ class Register extends Component
                                        onChange={this.onChange}
                                 />
                             </div>
-                            <button type="submit"
-                                    className="btn btn-lg btn-primary btn-block col-lg-3 col-md-3 col-sm-xs-12"
-                            >
-                                Register
-                            </button>
+                            <div className="form-group col-lg-8 col-md-3 col-sm-xs-12">
+                                    <button type="submit"
+                                            className="btn btn-lg btn-primary btn-block col-lg-3 col-md-3 col-sm-xs-12"
+                                    >
+                                        Add
+                                    </button>
+                            </div>
                         </form>
                     </div>
-                    <div className="col-md mt-6 mx-auto">
-                        <h1>Hello world</h1>
+                    <div className="col-md mt-8 mx-auto">
+                        <div className="form-group col-lg-8 col-md-3 col-sm-xs-12">
+                            <center>
+                                <h4>List of users</h4>
+                            </center>
+                            <table className="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Email</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {userList}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
