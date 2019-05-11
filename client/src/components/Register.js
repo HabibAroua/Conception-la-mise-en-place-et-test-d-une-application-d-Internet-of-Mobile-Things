@@ -36,6 +36,15 @@ class Register extends Component
                 }
             })
     }
+    init_value()
+    {
+        this.state.first_name='';
+        this.state.last_name='';
+        this.state.email= '';
+        this.state.password= '';
+        this.state.confirmPassword='';
+    }
+
     constructor()
     {
         super();
@@ -52,6 +61,7 @@ class Register extends Component
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
         this.onDelete=this.onDelete.bind(this);
+        this.init_value=this.init_value.bind(this);
     }
 
     onDelete(id ,e)
@@ -156,6 +166,9 @@ class Register extends Component
                                         {
 
                                         })
+                                        this.init_value();
+                                        this.setState({[e.target.name]: ''})
+                                        window.location.reload();
                                     }
                                 }
                             }

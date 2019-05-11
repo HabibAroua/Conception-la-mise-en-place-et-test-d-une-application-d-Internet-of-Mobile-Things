@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8717a64f-5e7f-4d9a-bd6a-f9880b3ce112" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Navbar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/Users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Users.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/components/Register.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="306" column="24" lean-forward="true" selection-start-line="306" selection-start-column="24" selection-end-line="306" selection-end-column="24" />
+            <state relative-caret-position="289">
+              <caret line="170" column="65" selection-start-line="170" selection-start-column="65" selection-end-line="170" selection-end-column="65" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -160,7 +156,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="736" />
     <option name="y" value="20" />
     <option name="width" value="620" />
@@ -276,12 +272,12 @@
       <workItem from="1557508144317" duration="409000" />
       <workItem from="1557525077553" duration="4526000" />
       <workItem from="1557572777609" duration="12663000" />
-      <workItem from="1557606023130" duration="3841000" />
+      <workItem from="1557606023130" duration="5033000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175492000" />
+    <option name="totallyTimeSpent" value="176684000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -462,8 +458,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Register.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="306" column="24" lean-forward="true" selection-start-line="306" selection-start-column="24" selection-end-line="306" selection-end-column="24" />
+        <state relative-caret-position="289">
+          <caret line="170" column="65" selection-start-line="170" selection-start-column="65" selection-end-line="170" selection-end-column="65" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
