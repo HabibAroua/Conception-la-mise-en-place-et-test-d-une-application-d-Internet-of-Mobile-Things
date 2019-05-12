@@ -170,4 +170,15 @@ users.get('/AllSimpleUsers',(req,res)=>
         res.send(results);
     });
 });
+
+users.post('/DeleteUser',(req,res)=>
+{
+    let sql=`DELETE FROM users WHERE id=${req.body.id}`;
+    let query=db.query(sql,(err,result)=>
+    {
+        if(err)throw err;
+        console.log('user deleted ...');
+        res.send('user deleted ...');
+    });
+});
 module.exports =users
