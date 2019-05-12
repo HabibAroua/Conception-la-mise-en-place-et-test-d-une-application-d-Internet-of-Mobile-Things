@@ -8,6 +8,8 @@ import Profile from './components/Profile';
 import Register from './components/Register';
 import Map from './components/MyMap';
 import AllObjects from './components/AllObjects';
+import Statistics from './components/Statistics';
+
 class App extends Component {
   render() {
     return (
@@ -21,9 +23,8 @@ class App extends Component {
            <Route exact path="/profile" component={Profile} />
            <Route exact path="/allObject" component={AllObjects} />
            <Route exact path="/map" component={Map} />
-
+           <Route exact path="/statistics" component={Statistics} />
          </div>
-
        </div>
      </Router>
 

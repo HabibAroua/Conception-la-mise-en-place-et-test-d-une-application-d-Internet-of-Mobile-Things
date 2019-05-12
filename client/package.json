@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "apexcharts": "^3.6.11",
     "axios": "^0.18.0",
     "google-maps-react": "^2.0.2",
     "jwt-decode": "^2.2.0",
     "react": "^16.8.6",
+    "react-apexcharts": "^1.3.3",
     "react-dom": "^16.8.6",
     "react-native-map-clustering": "^1.3.2",
     "react-native-maps": "^0.24.0",
