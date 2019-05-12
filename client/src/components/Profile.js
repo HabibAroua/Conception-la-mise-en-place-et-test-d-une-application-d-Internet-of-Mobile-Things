@@ -246,6 +246,8 @@ class Profile extends Component
 
     render()
     {
+         this.myEmail=this.state.email
+
         const updatePassword=
             (
                 <div>
@@ -308,7 +310,7 @@ class Profile extends Component
                              </tr>
                         </tbody>
                     </table>
-                    <p>{this.state.password}</p>
+                    <p>{this.myEmail}</p>
                     <div id="updateInterface">
                         {userUpdate}
                     </div>

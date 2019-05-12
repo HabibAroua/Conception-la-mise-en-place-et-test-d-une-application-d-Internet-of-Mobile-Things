@@ -1,8 +1,27 @@
 import React , {Component} from 'react';
 import {Link , withRouter} from 'react-router-dom';
+import jwt_decode from "jwt-decode";
+import axios from "axios";
 
 class Navbar extends Component
 {
+    state=
+        {
+            nb:5
+        }
+
+    componentDidMount()
+     {
+         axios.get("http://localhost:5000/objects/AllObjects")
+             .then(res=>
+             {
+                 this.setState(
+                     {
+                         nb : "1"
+                     }
+                 )
+             });
+     }
     logOut(e)
     {
         e.preventDefault();
@@ -61,7 +80,7 @@ class Navbar extends Component
                 </li>
                 <li className="nav-item">
                     <Link to="/notification" className="nav-link">
-                        Notifications
+                        Notifications ({this.state.nb})
                     </Link>
                 </li>
                 <li className="nav-item">

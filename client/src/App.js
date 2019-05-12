@@ -9,6 +9,7 @@ import Register from './components/Register';
 import Map from './components/MyMap';
 import AllObjects from './components/AllObjects';
 import Statistics from './components/Statistics';
+import Notification from './components/Notification';
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
            <Route exact path="/allObject" component={AllObjects} />
            <Route exact path="/map" component={Map} />
            <Route exact path="/statistics" component={Statistics} />
+           <Route exact path="/notification" component={Notification} />
          </div>
        </div>
      </Router>
