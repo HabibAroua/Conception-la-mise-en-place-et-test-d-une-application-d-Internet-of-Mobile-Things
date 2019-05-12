@@ -36,6 +36,23 @@ class Register extends Component
                 }
             })
     }
+
+    delete(id)
+    {
+        return axios
+            .post('http://localhost:5000/users/DeleteUser',{
+                id:id
+            })
+            .then(res =>
+            {
+                window.Swal.fire(
+                    'Deleted!',
+                    res.data,
+                    'success'
+                )
+            })
+
+    }
     init_value(e)
     {
         this.state.first_name='';
@@ -68,7 +85,6 @@ class Register extends Component
 
     onDelete(id ,e)
     {
-        alert("the id is "+id);
         window.Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -78,12 +94,13 @@ class Register extends Component
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
-            if (result.value) {
-                window.Swal.fire(
-                    'Deleted!',
-                    'Your file has been deleted.',
-                    'success'
-                )
+            if (result.value)
+            {
+                this.delete(id).then(res =>
+                {
+
+                })
+                window.location.reload();
             }
         })
     }
