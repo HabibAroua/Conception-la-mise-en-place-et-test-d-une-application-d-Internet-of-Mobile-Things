@@ -7,17 +7,23 @@ class Navbar extends Component
 {
     state=
         {
-            nb:5
+            nb:[]
         }
 
     componentDidMount()
      {
-         axios.get("http://localhost:5000/objects/AllObjects")
+         const token=localStorage.usertoken;
+         const decode=jwt_decode(token);
+         //alert(decode.id)
+         axios.post("http://localhost:5000/notifications/nbNotification",{
+             idu:decode.id
+         })
              .then(res=>
              {
+                 alert(res.data)
                  this.setState(
                      {
-                         nb : "1"
+                         nb : res.data
                      }
                  )
              });

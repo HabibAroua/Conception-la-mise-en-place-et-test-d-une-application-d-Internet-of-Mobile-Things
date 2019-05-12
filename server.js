@@ -14,10 +14,11 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 var Users=require('./routes/Users');
 var Objects=require('./routes/Objects')
+var Notifications=require('./routes/Notification')
 
 app.use('/users',Users);
 app.use('/objects',Objects);
-
+app.use('/notifications',Notifications)
 app.get('/helo',(res,req)=>
 {
    req.send("Hello world")
