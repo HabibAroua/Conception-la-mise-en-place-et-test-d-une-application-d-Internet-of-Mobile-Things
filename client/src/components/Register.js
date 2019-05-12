@@ -87,8 +87,8 @@ class Register extends Component
     {
         window.Swal.fire({
             title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            type: 'warning',
+            text: "Do you want to delete this user?",
+            type: 'question',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
