@@ -28,4 +28,22 @@ objects.get('/AllObjects',(req,res)=>
     });
 })
 
+objects.get('/AllState',(req,res)=>
+{
+    let sql='select state from object order by id';
+    let query=db.query(sql,(err,results)=>
+    {
+        res.send(results);
+    });
+})
+
+objects.get('/AllWording',(req,res)=>
+{
+    let sql='select wording , state from object order by id';
+    let query=db.query(sql,(err,results)=>
+    {
+        res.send(results);
+    });
+})
+
 module.exports =objects

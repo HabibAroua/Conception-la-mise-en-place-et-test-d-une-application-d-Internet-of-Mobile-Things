@@ -1,27 +1,76 @@
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
+import axios from "axios";
 
-class Statistics extends Component {
-    constructor(props) {
+class Statistics extends Component
+{
+    constructor(props)
+    {
+
         super(props);
 
-        this.state = {
-            options: {
-                chart: {
+        this.state =
+            {
+            options:
+             {
+                chart:
+                {
                     id: "basic-bar"
                 },
-                xaxis: {
-                    categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998]
+                xaxis:
+                {
+                    categories: []
                 }
             },
-            series: [
+            series:
+            [
                 {
                     name: "series-1",
-                    data: [30, 40, 45, 50, 49, 60, 70, 91]
+                    data: []
                 }
             ]
         };
     }
+
+    componentDidMount()
+    {
+        var tabCat=[];
+        var tabVal=[];
+
+
+        axios.get("http://localhost:5000/objects/AllWording")
+            .then(res =>
+            {
+                let obj = JSON.stringify(res.data)
+                window.$.getJSON("http://localhost:5000/objects/AllWording", {}, function (data)
+                {
+                    var $ul = window.$('#ul')
+                    window.$.each(data, function (idx, item)
+                    {
+                        console.log("value is "+item.wording+" state "+item.state)
+                        tabCat.push(item.wording)
+                        tabVal.push(item.state)
+                    })
+                    console.log('the val is '+tabCat);
+                });
+                console.log('the val of tabCat is  is '+tabCat)
+            })
+        this.setState(
+            {
+                options: {
+                    xaxis: {
+                        categories: tabCat
+                    }
+                },
+                series: [
+                    {
+                        data:tabVal
+                    }
+                ]
+            }
+        )
+    }
+
 
     render() {
         return (
