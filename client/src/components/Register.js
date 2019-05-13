@@ -6,26 +6,23 @@ class Register extends Component
     register(newUser)
     {
         return axios
-            .post('http://localhost:5000/users/register',{
-                first_name:newUser.first_name,
-                last_name:newUser.last_name,
-                email:newUser.email,
-                password:newUser.password
-            })
-            .then(res =>{
-                if(res.data=="x1")
+            .post('http://localhost:5000/users/register',
                 {
+                    first_name: newUser.first_name,
+                    last_name: newUser.last_name,
+                    email: newUser.email,
+                    password: newUser.password
+                })
+            .then(res => {
+                if (res.data == "x1") {
                     window.Swal.fire
                     (
                         'Good job',
                         "User added ..",
                         'success'
                     )
-                }
-                else
-                {
-                    if(res.data=="x2")
-                    {
+                } else {
+                    if (res.data == "x2") {
                         window.Swal.fire
                         (
                             'Good job',
@@ -37,14 +34,12 @@ class Register extends Component
             })
     }
 
-    delete(id)
-    {
+    delete(id) {
         return axios
-            .post('http://localhost:5000/users/DeleteUser',{
-                id:id
+            .post('http://localhost:5000/users/DeleteUser', {
+                id: id
             })
-            .then(res =>
-            {
+            .then(res => {
                 window.Swal.fire(
                     'Deleted!',
                     res.data,
@@ -53,38 +48,36 @@ class Register extends Component
             })
 
     }
-    init_value(e)
-    {
-        this.state.first_name='';
-        this.state.last_name='';
-        this.state.email= '';
-        this.state.password= '';
-        this.state.confirmPassword='';
+
+    init_value(e) {
+        this.state.first_name = '';
+        this.state.last_name = '';
+        this.state.email = '';
+        this.state.password = '';
+        this.state.confirmPassword = '';
         this.setState({[e.target.name]: ''})
 
     }
 
-    constructor()
-    {
+    constructor() {
         super();
         this.state =
             {
-                first_name:'',
-                last_name:'',
+                first_name: '',
+                last_name: '',
                 email: '',
                 password: '',
-                confirmPassword:'',
-                users:[]
+                confirmPassword: '',
+                users: []
             }
 
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
-        this.onDelete=this.onDelete.bind(this);
-        this.init_value=this.init_value.bind(this);
+        this.onDelete = this.onDelete.bind(this);
+        this.init_value = this.init_value.bind(this);
     }
 
-    onDelete(id ,e)
-    {
+    onDelete(id, e) {
         window.Swal.fire({
             title: 'Are you sure?',
             text: "Do you want to delete this user?",
@@ -94,10 +87,8 @@ class Register extends Component
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
-            if (result.value)
-            {
-                this.delete(id).then(res =>
-                {
+            if (result.value) {
+                this.delete(id).then(res => {
 
                 })
                 window.location.reload();
@@ -105,89 +96,103 @@ class Register extends Component
         })
     }
 
-    onChange(e)
-    {
+    onChange(e) {
         this.setState({[e.target.name]: e.target.value})
     }
 
-    onSubmit(e)
-    {
+    IsEmail(email) {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }
+
+    onSubmit(e) {
         e.preventDefault();
         const user =
             {
                 first_name: this.state.first_name,
-                last_name:this.state.last_name,
+                last_name: this.state.last_name,
                 email: this.state.email,
                 password: this.state.password,
-                confirmPassword:this.state.confirmPassword
+                confirmPassword: this.state.confirmPassword
             }
-            if((user.first_name=="")&&( user.last_name=="")&&(user.email=="") && (user.password=="") && (user.confirmPassword==""))
+        if ((user.first_name == "") && (user.last_name == "") && (user.email == "") && (user.password == "") && (user.confirmPassword == ""))
+        {
+            window.Swal.fire
+            (
+                'Error!',
+                "All values are empty",
+                'error'
+            )
+        }
+        else
+        {
+            if (user.first_name == "")
             {
                 window.Swal.fire
                 (
                     'Error!',
-                    "All values are empty",
+                    "The first name is empty",
                     'error'
                 )
             }
             else
             {
-                if(user.first_name=="")
+                if (user.last_name == "")
                 {
                     window.Swal.fire
                     (
                         'Error!',
-                        "The first name is empty",
+                        "The last name is empty",
                         'error'
                     )
                 }
                 else
                 {
-                    if(user.last_name=="")
+                    if (user.email == "")
                     {
                         window.Swal.fire
                         (
                             'Error!',
-                            "The last name is empty",
+                            "Email is empty",
                             'error'
                         )
                     }
                     else
                     {
-                        if(user.email=="")
+                        if (user.password == "")
                         {
                             window.Swal.fire
                             (
                                 'Error!',
-                                "Email is empty",
+                                "Password is empty",
                                 'error'
                             )
                         }
                         else
                         {
-                            if(user.password=="")
+                            if (user.confirmPassword == "")
                             {
                                 window.Swal.fire
                                 (
                                     'Error!',
-                                    "Password is empty",
+                                    'You should confirm the password',
                                     'error'
                                 )
                             }
                             else
                             {
-                                if(user.confirmPassword=="")
+                                if (this.IsEmail(user.email)==false)
                                 {
                                     window.Swal.fire
                                     (
                                         'Error!',
-                                        'You should confirm the password',
+                                        'Please enter a valid email',
                                         'error'
                                     )
                                 }
                                 else
                                 {
-                                    if(user.password!=user.confirmPassword)
+                                    if (user.password != user.confirmPassword)
                                     {
                                         window.Swal.fire
                                         (
@@ -198,11 +203,9 @@ class Register extends Component
                                     }
                                     else
                                     {
-                                        this.register(user).then(res =>
-                                        {
+                                        this.register(user).then(res => {
 
                                         })
-                                        this.init_value();
                                         window.location.reload();
                                     }
                                 }
@@ -211,7 +214,9 @@ class Register extends Component
                     }
                 }
             }
+        }
     }
+
 
     componentDidMount()
     {

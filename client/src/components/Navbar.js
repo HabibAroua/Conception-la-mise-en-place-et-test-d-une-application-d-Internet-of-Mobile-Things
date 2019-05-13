@@ -20,7 +20,6 @@ class Navbar extends Component
          })
              .then(res=>
              {
-                 alert(res.data)
                  this.setState(
                      {
                          nb : res.data

@@ -31,4 +31,15 @@ notifications.post('/nbNotification',(req,res)=>
     });
 })
 
+notifications.post('/getAllNotification',(req,res)=>
+{
+    let sql=`select * from notification where idu=${req.body.idu}`;
+    let query=db.query(sql,(err,results)=>
+    {
+        console.log(results);
+        res.send(results);
+    });
+})
+
+
 module.exports =notifications

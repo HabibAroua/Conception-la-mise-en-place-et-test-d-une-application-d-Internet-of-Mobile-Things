@@ -1,41 +1,82 @@
 import React ,{Component} from 'react';
 import jwt_decode from 'jwt-decode';
 import './style.css';
+import axios from "axios";
 
-class Notification extends Component {
-    constructor() {
-        super();
-        this.state =
-            {
-                first_name: '',
-                last_name: '',
-                email: '',
-                password: '',
-                oldPassword: '',
-                newPassword: '',
-                confirmPassword: ''
-            }
-    }
+class Notification extends Component
+{
+    state=
+        {
+            id:'',
+            first_name: '',
+            last_name: '',
+            email: '',
+            password: '',
+            oldPassword: '',
+            newPassword: '',
+            confirmPassword: '',
+            notifications:[]
+        }
 
-    componentDidMount() {
+    componentDidMount()
+    {
+
         const token = localStorage.usertoken;
         const decode = jwt_decode(token);
         console.log("the token is " + token);
         console.log("the val is  " + decode.first_name);
         this.setState(
             {
+                id:decode.id,
                 first_name: decode.first_name,
                 last_name: decode.last_name,
                 email: decode.email,
                 password: decode.password
             }
         );
+
+        axios.post("http://localhost:5000/notifications/getAllNotification",{
+            idu : decode.id
+        })
+            .then(res=>
+            {
+                alert(res.data);
+                this.setState(
+                    {
+                        notifications : res.data
+                    }
+                )
+            });
     }
 
-    render() {
+    render()
+    {
+
+        const {notifications}=this.state;
+        const notificationList=notifications.map(notification=>{
+            return(
+                <tr>
+                    <td>{notification.id}</td>
+                    <td>{notification.title}</td>
+                    <td>{notification.content}</td>
+                </tr>
+            )
+        })
         return(
             <div>
-                <p>the email is {this.state.email}</p>
+                <p>the email is {this.state.id}</p>
+                <table className="table table-striped ">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Content</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {notificationList}
+                    </tbody>
+                </table>
             </div>
         )
 
