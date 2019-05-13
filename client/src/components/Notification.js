@@ -49,9 +49,13 @@ class Notification extends Component
             });
     }
 
-    render()
+    onDelete(e,id)
     {
 
+    }
+
+    render()
+    {
         const {notifications}=this.state;
         const notificationList=notifications.map(notification=>{
             return(
@@ -59,6 +63,13 @@ class Notification extends Component
                     <td>{notification.id}</td>
                     <td>{notification.title}</td>
                     <td>{notification.content}</td>
+                    <td>
+                        <a href="#" className="btn btn-primary a-btn-slide-text"    onClick={this.onDelete.bind(this, notification.id)}
+                        >
+                            <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                            <span><strong>Delete</strong></span>
+                        </a>
+                    </td>
                 </tr>
             )
         })
@@ -71,6 +82,7 @@ class Notification extends Component
                         <th>Id</th>
                         <th>Title</th>
                         <th>Content</th>
+                        <th>Delete</th>
                     </tr>
                     </thead>
                     <tbody>
