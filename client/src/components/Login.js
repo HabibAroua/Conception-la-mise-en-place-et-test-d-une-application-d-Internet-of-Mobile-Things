@@ -99,17 +99,23 @@ class Login extends Component
                             this.login(user).then(res =>
                             {
                                 e.preventDefault();
-                                alert(res);
+                                //alert(res);
                                 if (res)
                                 {
                                     this.props.history.push('/profile')
-                                    alert("email and password are correct");
+                                    //alert("email and password are correct");
                                 }
                                 else
                                 {
                                     if(res==null)
                                     {
-                                        alert("email and password are not correct")
+                                        //alert("email and password are not correct")
+                                        window.Swal.fire
+                                        (
+                                            'Error!',
+                                            "email and password are not correct",
+                                            'error'
+                                        )
                                         console.log("email and password are not correct");
                                     }
                                 }

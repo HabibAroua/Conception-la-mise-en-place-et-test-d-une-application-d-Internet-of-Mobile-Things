@@ -40,7 +40,6 @@ class Notification extends Component
         })
             .then(res=>
             {
-                alert(res.data);
                 this.setState(
                     {
                         notifications : res.data
