@@ -13,19 +13,27 @@ class Navbar extends Component
     componentDidMount()
      {
          const token=localStorage.usertoken;
-         const decode=jwt_decode(token);
+         if(token==null)
+         {
+
+         }
+         else
+         {
+             const decode=jwt_decode(token);
+             axios.post("http://localhost:5000/notifications/nbNotification",{
+                 idu:decode.id
+             })
+                 .then(res=>
+                 {
+                     this.setState(
+                         {
+                             nb : res.data
+                         }
+                     )
+                 });
+         }
+
          //alert(decode.id)
-         axios.post("http://localhost:5000/notifications/nbNotification",{
-             idu:decode.id
-         })
-             .then(res=>
-             {
-                 this.setState(
-                     {
-                         nb : res.data
-                     }
-                 )
-             });
      }
     logOut(e)
     {
