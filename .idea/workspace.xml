@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8717a64f-5e7f-4d9a-bd6a-f9880b3ce112" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/Login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/images/iot.4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/images/iot.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/images/iot1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/images/iot3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/images/iot5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.css" afterDir="false" />
-    </list>
+    <list default="true" id="8717a64f-5e7f-4d9a-bd6a-f9880b3ce112" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -94,8 +84,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/components/Login.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+            <state relative-caret-position="268">
+              <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -209,7 +199,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="736" />
     <option name="y" value="20" />
     <option name="width" value="620" />
@@ -328,12 +318,12 @@
       <workItem from="1557825060646" duration="4419000" />
       <workItem from="1557955085049" duration="47000" />
       <workItem from="1558136636065" duration="2238000" />
-      <workItem from="1558173163486" duration="2035000" />
+      <workItem from="1558173163486" duration="2315000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="229667000" />
+    <option name="totallyTimeSpent" value="229947000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -564,8 +554,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Login.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="268">
+          <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
         </state>
       </provider>
     </entry>
