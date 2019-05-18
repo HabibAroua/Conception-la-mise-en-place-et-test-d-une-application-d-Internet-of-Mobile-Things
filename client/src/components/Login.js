@@ -131,10 +131,10 @@ class Login extends Component
         return (
             <div id="back_ground">
                 <div className="container">
-                    <div className="row">
+                    <div className="row" id="rowLogin">
                         <div className="col-md mt-8 mx-auto">
                             <form
-                                className="measure " noValidate onSubmit={this.onSubmit}>
+                                className="measure " id="formLogin" noValidate onSubmit={this.onSubmit}>
                                 <center>
                                     <h1 className="h3 mb-3 font-weight-normal">
                                         Please sign in

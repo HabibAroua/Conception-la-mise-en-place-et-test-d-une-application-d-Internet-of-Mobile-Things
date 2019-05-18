@@ -17,7 +17,7 @@
     background-color: rgba(47, 151, 203, 0.1);
 }
 
-.form
+#formLogin
 {
     width: 600PX;
 
@@ -31,10 +31,10 @@
 
 }
 
-.row{
+#rowLogin
+{
     width: 700px;
     background-size: 100px;
-
     background-color: rgba(160, 160, 160, 0.3);
     background-image:
             radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),

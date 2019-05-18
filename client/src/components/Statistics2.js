@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
 import axios from "axios";
-import Statistics2 from "./Statistics2"
 
-class Statistics extends Component
+class Statistics2 extends Component
 {
     constructor(props)
     {
@@ -12,25 +11,25 @@ class Statistics extends Component
 
         this.state =
             {
-            options:
-             {
-                chart:
-                {
-                    id: "basic-bar"
-                },
-                xaxis:
-                {
-                    categories: []
-                }
-            },
-            series:
-            [
-                {
-                    name: "series-1",
-                    data: []
-                }
-            ]
-        };
+                options:
+                    {
+                        chart:
+                            {
+                                id: "basic-bar"
+                            },
+                        xaxis:
+                            {
+                                categories: []
+                            }
+                    },
+                series:
+                    [
+                        {
+                            name: "series-1",
+                            data: []
+                        }
+                    ]
+            };
     }
 
     componentDidMount()
@@ -56,18 +55,18 @@ class Statistics extends Component
         this.setState(
             {
                 options:
-                {
-                    xaxis:
                     {
-                        categories: tabCat
-                    }
-                },
+                        xaxis:
+                            {
+                                categories: tabCat
+                            }
+                    },
                 series:
-                [
-                    {
-                        data:tabVal
-                    }
-                ]
+                    [
+                        {
+                            data:tabVal
+                        }
+                    ]
             }
         )
     }
@@ -86,7 +85,7 @@ class Statistics extends Component
                         />
                     </div>
                     <div>
-                        <Statistics2/>
+
                     </div>
                 </div>
             </div>
@@ -94,4 +93,4 @@ class Statistics extends Component
     }
 }
 
-export default Statistics
+export default Statistics2

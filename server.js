@@ -19,10 +19,7 @@ var Notifications=require('./routes/Notification')
 app.use('/users',Users);
 app.use('/objects',Objects);
 app.use('/notifications',Notifications)
-app.get('/helo',(res,req)=>
-{
-   req.send("Hello world")
-});
+
 
 app.listen(port,() =>
 {

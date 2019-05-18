@@ -120,7 +120,7 @@ class Register extends Component
             window.Swal.fire
             (
                 'Error!',
-                "All values are empty",
+                "All valuess are empty",
                 'error'
             )
         }

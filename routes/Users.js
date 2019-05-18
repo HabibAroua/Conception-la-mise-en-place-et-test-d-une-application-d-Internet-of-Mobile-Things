@@ -140,7 +140,7 @@ users.post('/updateUsers',(req,res)=>
 
 users.post('/updateUsersPassword',(req,res)=>
 {
-    var test=((bcrypt.compareSync(req.body.password,req.body.cryptPassword)));
+    var test=((bcrypt.compareSync(req.body.password,req.body.cryptPassword))); //comparer deux password wa7da crypté w lo5ra non crypté
     if(test)
     {
         bcrypt.hash(req.body.newPassword, 10,(err,hash)=>

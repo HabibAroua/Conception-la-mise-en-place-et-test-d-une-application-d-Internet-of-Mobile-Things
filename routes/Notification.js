@@ -41,5 +41,14 @@ notifications.post('/getAllNotification',(req,res)=>
     });
 })
 
-
+notifications.post('/delete',(req,res)=>
+{
+    let sql=`DELETE FROM notification WHERE id=${req.body.id}`;
+    let query=db.query(sql,(err,result)=>
+    {
+        if(err)throw err;
+        console.log('notification deleted ...');
+        res.send('Notification deleted ...');
+    });
+})
 module.exports =notifications
