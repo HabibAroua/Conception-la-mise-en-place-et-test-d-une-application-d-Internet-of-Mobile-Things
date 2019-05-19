@@ -31,9 +31,11 @@ class Navbar extends Component
                          }
                      )
                  });
+             if(decode.rule=='1')
+             {
+                 window.$("#usermanagement").hide();
+             }
          }
-
-         //alert(decode.id)
      }
     logOut(e)
     {
@@ -81,7 +83,7 @@ class Navbar extends Component
                         My Profile
                     </Link>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item" id="usermanagement">
                     <Link to="/register" className="nav-link">
                         User Management
                     </Link>
