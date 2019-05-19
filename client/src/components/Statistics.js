@@ -85,6 +85,9 @@ class Statistics extends Component
                                 type="bar"
                                 width="500"
                             />
+                            <center>
+                                <h6><strong>Figure N°1 :</strong>Label according to state</h6>
+                            </center>
                         </div>
                     </div>
                     <div className="col-md mt-8 mx-auto">

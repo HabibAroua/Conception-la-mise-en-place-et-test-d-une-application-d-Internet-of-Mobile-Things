@@ -83,6 +83,9 @@ class Statistics2 extends Component
                             type="bar"
                             width="500"
                         />
+                        <center>
+                            <h6><strong>Figure N°2 :</strong>Label according to (state/init State)*100</h6>
+                        </center>
                     </div>
                     <div>
 

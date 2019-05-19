@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8717a64f-5e7f-4d9a-bd6a-f9880b3ce112" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/client/src/components/Statistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Statistics.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Statistics2.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Statistics2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/Objects.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Objects.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/components/Statistics.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="72" column="5" selection-start-line="35" selection-start-column="4" selection-end-line="72" selection-end-column="5" />
+            <state>
+              <caret lean-forward="true" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -37,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/Statistics2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="48" column="49" lean-forward="true" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
+            <state relative-caret-position="336">
+              <caret line="86" column="50" selection-start-line="86" selection-start-column="50" selection-end-line="86" selection-end-column="50" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -133,10 +133,10 @@
         <option value="$PROJECT_DIR$/client/src/components/Login.js" />
         <option value="$PROJECT_DIR$/client/src/components/Register.js" />
         <option value="$PROJECT_DIR$/routes/Notification.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Statistics.js" />
         <option value="$PROJECT_DIR$/ppe.sql" />
         <option value="$PROJECT_DIR$/routes/Objects.js" />
         <option value="$PROJECT_DIR$/client/src/components/Statistics2.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Statistics.js" />
       </list>
     </option>
   </component>
@@ -283,12 +283,12 @@
       <workItem from="1558136636065" duration="2238000" />
       <workItem from="1558173163486" duration="7095000" />
       <workItem from="1558201689485" duration="1573000" />
-      <workItem from="1558256676474" duration="3200000" />
+      <workItem from="1558256676474" duration="3767000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="239500000" />
+    <option name="totallyTimeSpent" value="240067000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -510,16 +510,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Statistics.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="72" column="5" selection-start-line="35" selection-start-column="4" selection-end-line="72" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/iomt.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -543,8 +533,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Statistics2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="48" column="49" lean-forward="true" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
+        <state relative-caret-position="336">
+          <caret line="86" column="50" selection-start-line="86" selection-start-column="50" selection-end-line="86" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Statistics.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
