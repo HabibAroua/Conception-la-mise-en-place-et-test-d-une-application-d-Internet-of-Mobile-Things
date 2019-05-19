@@ -7,7 +7,7 @@ CREATE TABLE utilisateur
     prenom varchar(40) ,
     role int ,
     email varchar(40) UNIQUE ,
-    password varchar(40)
+    password varchar(255)
 );
 
 CREATE TABLE notification 
