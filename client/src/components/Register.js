@@ -48,7 +48,6 @@ class Register extends Component
                     'success'
                 )
             })
-
     }
 
     init_value(e) {
@@ -79,7 +78,8 @@ class Register extends Component
         this.init_value = this.init_value.bind(this);
     }
 
-    onDelete(id, e) {
+    onDelete(id, e)
+    {
         window.Swal.fire({
             title: 'Are you sure?',
             text: "Do you want to delete this user?",

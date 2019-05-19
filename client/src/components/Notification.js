@@ -47,10 +47,28 @@ class Notification extends Component
             });
     }
 
-    onDelete(id, e) {
+    delete(id)
+    {
+        return axios
+            .post('http://localhost:5000/notifications/delete', {
+                id: id
+            })
+            .then(res =>
+            {
+                window.Swal.fire
+                (
+                    'Deleted!',
+                    res.data,
+                    'success'
+                )
+            })
+    }
+
+    onDelete(id, e)
+    {
         window.Swal.fire({
             title: 'Are you sure?',
-            text: "Do you want to delete this user?",
+            text: "Do you want to delete this notification ?",
             type: 'question',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -59,7 +77,9 @@ class Notification extends Component
         }).then((result) => {
             if (result.value)
             {
-                alert("id : "+id);
+                this.delete(id).then(res => {
+
+                })
                 window.location.reload();
             }
         })
