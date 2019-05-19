@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8717a64f-5e7f-4d9a-bd6a-f9880b3ce112" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Navbar.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -15,6 +17,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/components/Login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="107" column="61" selection-start-line="107" selection-start-column="61" selection-end-line="107" selection-end-column="61" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/Notification.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -31,7 +45,7 @@
         <entry file="file://$PROJECT_DIR$/client/src/components/Register.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="118">
-              <caret line="249" column="80" selection-start-line="249" selection-start-column="80" selection-end-line="249" selection-end-column="80" />
+              <caret line="95" column="16" lean-forward="true" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="41" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -42,8 +56,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/Profile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="219" column="8" lean-forward="true" selection-start-line="219" selection-start-column="8" selection-end-line="219" selection-end-column="43" />
+            <state relative-caret-position="17">
+              <caret line="68" column="23" lean-forward="true" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="23" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -54,8 +68,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/components/Navbar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="35" column="42" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
+            <state relative-caret-position="186">
+              <caret line="55" column="21" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -106,10 +120,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>google</find>
-      <find>token</find>
-      <find>not</find>
-      <find>res</find>
       <find>Registered</find>
       <find>db</find>
       <find>userData</find>
@@ -136,6 +146,10 @@
       <find>this</find>
       <find>delete</find>
       <find>hide</find>
+      <find>wind</find>
+      <find>window.</find>
+      <find>token</find>
+      <find>login</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -158,13 +172,11 @@
         <option value="$PROJECT_DIR$/client/src/components/style.css" />
         <option value="$PROJECT_DIR$/client/public/index.html" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Profile.js" />
         <option value="$PROJECT_DIR$/client/src/App.js" />
         <option value="$PROJECT_DIR$/client/src/index.css" />
         <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/client/src/components/AllObjects.js" />
         <option value="$PROJECT_DIR$/client/src/components/Login.css" />
-        <option value="$PROJECT_DIR$/client/src/components/Login.js" />
         <option value="$PROJECT_DIR$/routes/Notification.js" />
         <option value="$PROJECT_DIR$/ppe.sql" />
         <option value="$PROJECT_DIR$/routes/Objects.js" />
@@ -173,6 +185,8 @@
         <option value="$PROJECT_DIR$/client/src/components/Register.js" />
         <option value="$PROJECT_DIR$/client/src/components/Notification.js" />
         <option value="$PROJECT_DIR$/routes/Users.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Profile.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Login.js" />
         <option value="$PROJECT_DIR$/client/src/components/Navbar.js" />
       </list>
     </option>
@@ -315,12 +329,12 @@
       <workItem from="1558136636065" duration="2238000" />
       <workItem from="1558173163486" duration="7095000" />
       <workItem from="1558201689485" duration="1573000" />
-      <workItem from="1558256676474" duration="9737000" />
+      <workItem from="1558256676474" duration="10850000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="246037000" />
+    <option name="totallyTimeSpent" value="247150000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -443,16 +457,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1547">
-          <caret line="93" column="11" selection-start-line="93" selection-start-column="11" selection-end-line="93" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Login.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -558,7 +562,7 @@
     <entry file="file://$PROJECT_DIR$/client/src/components/Register.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
-          <caret line="249" column="80" selection-start-line="249" selection-start-column="80" selection-end-line="249" selection-end-column="80" />
+          <caret line="95" column="16" lean-forward="true" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="41" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -567,8 +571,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Profile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="219" column="8" lean-forward="true" selection-start-line="219" selection-start-column="8" selection-end-line="219" selection-end-column="43" />
+        <state relative-caret-position="17">
+          <caret line="68" column="23" lean-forward="true" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="107" column="61" selection-start-line="107" selection-start-column="61" selection-end-line="107" selection-end-column="61" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -577,8 +591,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Navbar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="35" column="42" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
+        <state relative-caret-position="186">
+          <caret line="55" column="21" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>

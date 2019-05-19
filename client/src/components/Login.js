@@ -105,6 +105,7 @@ class Login extends Component
                                 {
                                     this.props.history.push('/profile')
                                     //alert("email and password are correct");
+                                    window.location.reload();
                                 }
                                 else
                                 {
