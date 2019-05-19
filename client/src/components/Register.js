@@ -34,12 +34,14 @@ class Register extends Component
             })
     }
 
-    delete(id) {
+    delete(id)
+    {
         return axios
             .post('http://localhost:5000/users/DeleteUser', {
                 id: id
             })
-            .then(res => {
+            .then(res =>
+            {
                 window.Swal.fire(
                     'Deleted!',
                     res.data,

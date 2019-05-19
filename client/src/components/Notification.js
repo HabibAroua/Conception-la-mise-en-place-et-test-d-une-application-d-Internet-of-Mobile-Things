@@ -20,7 +20,6 @@ class Notification extends Component
 
     componentDidMount()
     {
-
         const token = localStorage.usertoken;
         const decode = jwt_decode(token);
         console.log("the token is " + token);
@@ -48,9 +47,22 @@ class Notification extends Component
             });
     }
 
-    onDelete(e,id)
-    {
-
+    onDelete(id, e) {
+        window.Swal.fire({
+            title: 'Are you sure?',
+            text: "Do you want to delete this user?",
+            type: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.value)
+            {
+                alert("id : "+id);
+                window.location.reload();
+            }
+        })
     }
 
     render()
@@ -74,7 +86,6 @@ class Notification extends Component
         })
         return(
             <div>
-                <p>the email is {this.state.id}</p>
                 <table className="table table-striped ">
                     <thead>
                     <tr>
