@@ -27,20 +27,6 @@ users.get('/test',(req,res)=>
 
 var nodemailer = require('nodemailer');
 
-var transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: 'youremail@gma',
-        pass: 'yourpassword'
-    }
-});
-
-var mailOptions = {
-    from: 'youremail@gmail.com',
-    to: 'myfriend@yahoo.com',
-    subject: 'Sending Email using Node.js',
-    text: 'That was easy!'
-};
 
 users.post('/register',(req,res)=>
 {
@@ -70,6 +56,32 @@ users.post('/register',(req,res)=>
                         {
                             console.log("res.json({status: user.email+ ' registered'})");
                             res.send("x1")
+                            var transporter = nodemailer.createTransport({
+                                service: 'gmail',
+                                secure: false ,
+                                port : 25 ,
+                                auth: {
+                                    user: 'habibha.aroua82@gmail.com',
+                                    pass: 'habib.aroua@hotmail.framour88'
+                                }, tls: {
+                                    rejectUnauthorized: false
+                                }
+                            });
+                            //https://myaccount.google.com/lesssecureapps security
+                            var mailOptions = {
+                                from: 'habibha.aroua82@gmail.com',
+                                to: user.email,
+                                subject: 'Welcome to our group',
+                                text: 'Congratulations you are active member in our group'
+                            };
+
+                            transporter.sendMail(mailOptions, function(error, info){
+                                if (error) {
+                                    console.log(error);
+                                } else {
+                                    console.log('Email sent: ' + info.response);
+                                }
+                            });
                         })
                 })
             }
