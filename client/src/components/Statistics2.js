@@ -47,7 +47,7 @@ class Statistics2 extends Component
                     window.$.each(data, function (idx, item)
                     {
                         tabCat.push(item.wording)
-                        tabVal.push(item.state)
+                        tabVal.push(item.taux)
                     })
                 });
             })

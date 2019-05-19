@@ -39,7 +39,7 @@ objects.get('/AllState',(req,res)=>
 
 objects.get('/AllWording',(req,res)=>
 {
-    let sql='select wording , state from object order by id';
+    let sql='select wording , state , (state/init_state)*100 as taux from object order by id';
     let query=db.query(sql,(err,results)=>
     {
         res.send(results);
