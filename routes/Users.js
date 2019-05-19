@@ -24,6 +24,24 @@ users.get('/test',(req,res)=>
 {
     res.send("This test page");
 })
+
+var nodemailer = require('nodemailer');
+
+var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'youremail@gma',
+        pass: 'yourpassword'
+    }
+});
+
+var mailOptions = {
+    from: 'youremail@gmail.com',
+    to: 'myfriend@yahoo.com',
+    subject: 'Sending Email using Node.js',
+    text: 'That was easy!'
+};
+
 users.post('/register',(req,res)=>
 {
     const today=new Date()

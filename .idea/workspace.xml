@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8717a64f-5e7f-4d9a-bd6a-f9880b3ce112" name="Default Changelist" comment="" />
+    <list default="true" id="8717a64f-5e7f-4d9a-bd6a-f9880b3ce112" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/Users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Users.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -17,7 +21,7 @@
         <entry file="file://$PROJECT_DIR$/client/src/components/Notification.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="254">
-              <caret line="127" column="28" lean-forward="true" selection-start-line="127" selection-start-column="28" selection-end-line="127" selection-end-column="28" />
+              <caret line="127" column="28" selection-start-line="127" selection-start-column="28" selection-end-line="127" selection-end-column="28" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -29,7 +33,7 @@
         <entry file="file://$PROJECT_DIR$/client/src/components/Register.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="254">
-              <caret line="50" column="5" lean-forward="true" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+              <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -46,11 +50,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/Notification.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="52" column="2" lean-forward="true" selection-start-line="52" selection-start-column="2" selection-end-line="52" selection-end-column="2" />
+            <state relative-caret-position="285">
+              <caret line="53" column="29" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes/Users.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="353">
+              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
             </state>
           </provider>
         </entry>
@@ -122,7 +135,6 @@
         <option value="$PROJECT_DIR$/client/src/App.js" />
         <option value="$PROJECT_DIR$/client/src/components/Navbar.js" />
         <option value="$PROJECT_DIR$/client/src/index.css" />
-        <option value="$PROJECT_DIR$/routes/Users.js" />
         <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/client/src/components/AllObjects.js" />
         <option value="$PROJECT_DIR$/client/src/components/Login.css" />
@@ -134,6 +146,7 @@
         <option value="$PROJECT_DIR$/client/src/components/Statistics.js" />
         <option value="$PROJECT_DIR$/client/src/components/Register.js" />
         <option value="$PROJECT_DIR$/client/src/components/Notification.js" />
+        <option value="$PROJECT_DIR$/routes/Users.js" />
       </list>
     </option>
   </component>
@@ -280,12 +293,12 @@
       <workItem from="1558136636065" duration="2238000" />
       <workItem from="1558173163486" duration="7095000" />
       <workItem from="1558201689485" duration="1573000" />
-      <workItem from="1558256676474" duration="6801000" />
+      <workItem from="1558256676474" duration="7246000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="243101000" />
+    <option name="totallyTimeSpent" value="243546000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -420,13 +433,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/Users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="175" column="4" lean-forward="true" selection-start-line="175" selection-start-column="4" selection-end-line="181" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1547">
@@ -518,7 +524,7 @@
     <entry file="file://$PROJECT_DIR$/client/src/components/Notification.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="254">
-          <caret line="127" column="28" lean-forward="true" selection-start-line="127" selection-start-column="28" selection-end-line="127" selection-end-column="28" />
+          <caret line="127" column="28" selection-start-line="127" selection-start-column="28" selection-end-line="127" selection-end-column="28" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -528,7 +534,7 @@
     <entry file="file://$PROJECT_DIR$/client/src/components/Register.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="254">
-          <caret line="50" column="5" lean-forward="true" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -544,8 +550,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/Notification.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="52" column="2" lean-forward="true" selection-start-line="52" selection-start-column="2" selection-end-line="52" selection-end-column="2" />
+        <state relative-caret-position="285">
+          <caret line="53" column="29" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/Users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
         </state>
       </provider>
     </entry>
