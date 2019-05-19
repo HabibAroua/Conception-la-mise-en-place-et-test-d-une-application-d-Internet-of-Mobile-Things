@@ -19,7 +19,7 @@ CREATE TABLE notification
     ido int 
 );
 
-CREATE TABLE objet 
+CREATE TABLE object
 (
     id int AUTO_INCREMENT PRIMARY KEY ,
     libelle varchar(40) ,
@@ -37,3 +37,5 @@ alter table notification add CONSTRAINT fk4 FOREIGN key(ido) REFERENCES objet(id
 ALTER TABLE utilisateur
 ADD CONSTRAINT constraint_name
 CHECK (role BETWEEN 0 AND 1);
+
+alter TABLE object add COLUMN init_state int

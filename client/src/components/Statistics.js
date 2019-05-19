@@ -77,15 +77,17 @@ class Statistics extends Component
         return (
             <div className="app">
                 <div className="row">
-                    <div className="mixed-chart">
-                        <Chart
-                            options={this.state.options}
-                            series={this.state.series}
-                            type="bar"
-                            width="500"
-                        />
+                    <div className="col-md mt-8 mx-auto">
+                        <div className="mixed-chart">
+                            <Chart
+                                options={this.state.options}
+                                series={this.state.series}
+                                type="bar"
+                                width="500"
+                            />
+                        </div>
                     </div>
-                    <div>
+                    <div className="col-md mt-8 mx-auto">
                         <Statistics2/>
                     </div>
                 </div>
