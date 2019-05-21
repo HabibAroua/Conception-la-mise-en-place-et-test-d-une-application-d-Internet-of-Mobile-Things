@@ -291,7 +291,7 @@ class Profile extends Component
                     <table className="table col-md-4 mx-auto">
                         <tbody>
                              <tr>
-                                 <td>First Name</td>
+                                 <td><strong>First Name</strong></td>
                                  <td>{this.state.first_name}</td>
                                  <td>
                                      <button onClick={this.showUpdate}  type="button" className="btn btn-primary btn-lg">Update Info</button>
@@ -301,16 +301,15 @@ class Profile extends Component
                                  </td>
                              </tr>
                              <tr>
-                                 <td>Last Name</td>
+                                 <td><strong>Last Name</strong></td>
                                  <td>{this.state.last_name}</td>
                              </tr>
                              <tr>
-                                 <td>Email</td>
+                                 <td><strong>Email</strong></td>
                                  <td>{this.state.email}</td>
                              </tr>
                         </tbody>
                     </table>
-                    <p>{this.myEmail}</p>
                     <div id="updateInterface">
                         {userUpdate}
                     </div>
