@@ -20,10 +20,6 @@ users.use(cors())
 
 process.env.SECRET_KEY='secret'
 
-users.get('/test',(req,res)=>
-{
-    res.send("This test page");
-})
 
 var nodemailer = require('nodemailer');
 
@@ -115,7 +111,6 @@ users.post('/login',(req,res)=>
                     let token = jwt.sign(user.dataValues,process.env.SECRET_KEY , {
                         expiresIn: 1440
                     })
-                    console.log("password is correct inst 2");
                     res.send(token)
                 }
                 else
