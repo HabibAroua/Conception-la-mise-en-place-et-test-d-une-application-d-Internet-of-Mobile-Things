@@ -5,17 +5,19 @@ import axios from "axios";
 export class MyMap extends  React.Component
 {
     state =
-        {
-            objects : []
-        }
+    {
+        objects : []
+    }
     handleClick(param1,param2, e)
     {
-        window.Swal.fire(
+        window.Swal.fire
+		(
             'Wording : '+param1+'\n State : '+param2+'% \n',
             '',
             'info'
         )
     }
+	
     componentDidMount()
     {
         axios.get("http://localhost:5000/objects/AllObjects")
@@ -23,12 +25,12 @@ export class MyMap extends  React.Component
             {
                 console.log(res.data);
                 this.setState(
-                    {
+                {
                         objects : res.data
-                    }
-                )
+				})
             });
     }
+	
     render()
     {
         const {objects}=this.state;

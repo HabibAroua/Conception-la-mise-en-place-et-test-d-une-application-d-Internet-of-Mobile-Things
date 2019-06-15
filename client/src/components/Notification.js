@@ -6,17 +6,17 @@ import axios from "axios";
 class Notification extends Component
 {
     state=
-        {
-            id:'',
-            first_name: '',
-            last_name: '',
-            email: '',
-            password: '',
-            oldPassword: '',
-            newPassword: '',
-            confirmPassword: '',
-            notifications:[]
-        }
+    {
+        id:'',
+        first_name: '',
+        last_name: '',
+        email: '',
+        password: '',
+        oldPassword: '',
+        newPassword: '',
+        confirmPassword: '',
+        notifications:[]
+    }
 
     componentDidMount()
     {
@@ -25,32 +25,31 @@ class Notification extends Component
         console.log("the token is " + token);
         console.log("the val is  " + decode.first_name);
         this.setState(
-            {
-                id:decode.id,
-                first_name: decode.first_name,
-                last_name: decode.last_name,
-                email: decode.email,
-                password: decode.password
-            }
-        );
-
-        axios.post("http://localhost:5000/notifications/getAllNotification",{
+        {
+            id:decode.id,
+            first_name: decode.first_name,
+            last_name: decode.last_name,
+            email: decode.email,
+            password: decode.password
+        });
+		axios.post("http://localhost:5000/notifications/getAllNotification",
+	    {
             idu : decode.id
         })
-            .then(res=>
+        .then(res=>
+        {
+            this.setState(
             {
-                this.setState(
-                    {
-                        notifications : res.data
-                    }
-                )
-            });
+                notifications : res.data
+            })
+        });
     }
 
     delete(id)
     {
         return axios
-            .post('http://localhost:5000/notifications/delete', {
+            .post('http://localhost:5000/notifications/delete', 
+			{
                 id: id
             })
             .then(res =>
@@ -74,7 +73,8 @@ class Notification extends Component
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
+        }).then((result) =>
+		{
             if (result.value)
             {
                 this.delete(id).then(res => {

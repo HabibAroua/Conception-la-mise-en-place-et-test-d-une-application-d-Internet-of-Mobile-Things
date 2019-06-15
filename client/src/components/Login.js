@@ -7,7 +7,8 @@ class Login extends Component
     login(user)
     {
         return axios
-            .post('users/login',{
+            .post('users/login',
+			{
                 email : user.email,
                 password : user.password
             })
@@ -21,7 +22,8 @@ class Login extends Component
                 console.log("error : "+err)
             })
     }
-    constructor() {
+    constructor() 
+	{
         super()
         this.state =
             {
@@ -48,87 +50,85 @@ class Login extends Component
     {
         e.preventDefault();
         const user =
-            {
-                email: this.state.email,
-                password: this.state.password
-            }
+        {
+			email: this.state.email,
+            password: this.state.password
+        }
 
         if((user.email=="")&&(user.password==""))
+        {
+            window.Swal.fire
+            (
+                'Error',
+                'Email and password are empty',
+                'error'
+            )
+        }
+        else
+        {
+			if(user.email=="")
             {
                 window.Swal.fire
                 (
                     'Error',
-                    'Email and password are empty',
+                    'Email is empty',
                     'error'
                 )
             }
             else
-            {
-                if(user.email=="")
+			{
+                if(user.password=="")
                 {
                     window.Swal.fire
                     (
                         'Error',
-                        'Email is empty',
+                        'Password is empty',
                         'error'
                     )
                 }
                 else
                 {
-                    if(user.password=="")
+                    if(!this.IsEmail(user.email))
                     {
                         window.Swal.fire
                         (
                             'Error',
-                            'Password is empty',
+                            'Please write a valid email',
                             'error'
                         )
                     }
                     else
                     {
-                        if(!this.IsEmail(user.email))
+                        this.login(user).then(res =>
                         {
-                            window.Swal.fire
-                            (
-                                'Error',
-                                'Please write a valid email',
-                                'error'
-                            )
-                        }
-                        else
-                        {
-                            this.login(user).then(res =>
+                            e.preventDefault();
+                            if (res)
                             {
-                                e.preventDefault();
-                                //alert(res);
-                                if (res)
+                                this.props.history.push('/profile')
+                                window.location.reload();
+                            }
+                            else
+                            {
+                                if(res==null)
                                 {
-                                    this.props.history.push('/profile')
-                                    //alert("email and password are correct");
-                                    window.location.reload();
+                                    window.Swal.fire
+                                    (
+                                        'Error!',
+                                        "email and password are not correct",
+                                        'error'
+                                    )
+                                    console.log("email and password are not correct");
                                 }
-                                else
-                                {
-                                    if(res==null)
-                                    {
-                                        //alert("email and password are not correct")
-                                        window.Swal.fire
-                                        (
-                                            'Error!',
-                                            "email and password are not correct",
-                                            'error'
-                                        )
-                                        console.log("email and password are not correct");
-                                    }
-                                }
-                            })
-                        }
+                            }
+                        })
                     }
                 }
             }
+        }
     }
 
-    render() {
+    render() 
+	{
         return (
             <div id="back_ground">
                 <div className="container">
