@@ -22,5 +22,4 @@
 
   <img src="Picture/10.png" />
 
-  <img src="Picture/11.png" />
 </center>
