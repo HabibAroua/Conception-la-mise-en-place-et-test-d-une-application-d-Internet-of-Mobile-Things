@@ -14,15 +14,19 @@ class Register extends Component
                     password: newUser.password
                 })
             .then(res => {
-                if (res.data == "x1") {
+                if (res.data == "x1") 
+                {
                     window.Swal.fire
                     (
                         'Good job',
                         "User added ..",
                         'success'
                     )
-                } else {
-                    if (res.data == "x2") {
+                }
+                else 
+                {
+                    if (res.data == "x2") 
+                    {
                         window.Swal.fire
                         (
                             'Good job',
@@ -50,7 +54,8 @@ class Register extends Component
             })
     }
 
-    init_value(e) {
+    init_value(e) 
+    {
         this.state.first_name = '';
         this.state.last_name = '';
         this.state.email = '';
@@ -60,7 +65,8 @@ class Register extends Component
 
     }
 
-    constructor() {
+    constructor() 
+    {
         super();
         this.state =
             {
@@ -80,17 +86,23 @@ class Register extends Component
 
     onDelete(id, e)
     {
-        window.Swal.fire({
-            title: 'Are you sure?',
-            text: "Do you want to delete this user?",
-            type: 'question',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.value) {
-                this.delete(id).then(res => {
+        window.Swal.fire
+        (
+            {
+                title: 'Are you sure?',
+                text: "Do you want to delete this user?",
+                type: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }
+        ).then((result) => 
+        {
+            if (result.value) 
+            {
+                this.delete(id).then(res => 
+                {
 
                 })
                 window.location.reload();
@@ -98,25 +110,28 @@ class Register extends Component
         })
     }
 
-    onChange(e) {
+    onChange(e) 
+    {
         this.setState({[e.target.name]: e.target.value})
     }
 
-    IsEmail(email) {
+    IsEmail(email) 
+    {
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
     }
 
-    onSubmit(e) {
+    onSubmit(e) 
+    {
         e.preventDefault();
         const user =
-            {
-                first_name: this.state.first_name,
-                last_name: this.state.last_name,
-                email: this.state.email,
-                password: this.state.password,
-                confirmPassword: this.state.confirmPassword
-            }
+        {
+            first_name: this.state.first_name,
+            last_name: this.state.last_name,
+            email: this.state.email,
+            password: this.state.password,
+            confirmPassword: this.state.confirmPassword
+        }
         if ((user.first_name == "") && (user.last_name == "") && (user.email == "") && (user.password == "") && (user.confirmPassword == ""))
         {
             window.Swal.fire
