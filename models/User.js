@@ -4,31 +4,37 @@ const db =require("../database/db")
 module.exports = db.sequelize.define(
     'user',
     {
-        id: {
+        id: 
+        {
             type: Sequelize.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        first_name:{
+        first_name:
+        {
             type: Sequelize.STRING
         },
-        last_name:{
+        last_name:
+        {
             type: Sequelize.STRING
         },
-        rule:{
+        rule:
+        {
             type: Sequelize.INTEGER
         },
-        email:{
+        email:
+        {
             type: Sequelize.STRING
         },
-        password:{
+        password:
+        {
             type: Sequelize.STRING
         },
-        created:{
+        created:
+        {
             type: Sequelize.DATE,
             defaultValue: Sequelize.NOW
         }
-
     },
     {
         timestamps: false
