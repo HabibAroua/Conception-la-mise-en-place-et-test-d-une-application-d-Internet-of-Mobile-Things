@@ -3,13 +3,15 @@ import axios from 'axios'
 export let register=newUser =>
 {
     return axios
-        .post('users/register',{
+        .post('users/register',
+        {
             first_name:newUser.first_name,
             last_name:newUser.last_name,
             email:newUser.email,
             password:newUser.password
         })
-        .then(res =>{
+        .then(res =>
+        {
             console.log("Registered")
         })
 }
@@ -17,7 +19,8 @@ export let register=newUser =>
 export let login = user =>
 {
     return axios
-        .post('users/login',{
+        .post('users/login',
+        {
             email : user.email,
             password : user.password
         })
