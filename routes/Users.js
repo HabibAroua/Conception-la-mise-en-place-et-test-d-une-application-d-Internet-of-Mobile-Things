@@ -28,56 +28,71 @@ users.post('/register',(req,res)=>
 {
     const today=new Date()
     const userData =
+    {
+        first_name:req.body.first_name,
+        last_name:req.body.last_name,
+        email:req.body.email,
+        rule:1,
+        password:req.body.password,
+        created: today
+    }
+    User.findOne
+    (
         {
-            first_name:req.body.first_name,
-            last_name:req.body.last_name,
-            email:req.body.email,
-            rule:1,
-            password:req.body.password,
-            created: today
-        }
-    User.findOne({
-        where:
+            where:
             {
                 email: req.body.email
             }
-    })
-        .then(user=>{
-            if(!user)
+        }
+    )
+    .then(user=>
+    {
+        if(!user)
+        {
+            bcrypt.hash(req.body.password, 10,(err,hash)=>
             {
-                bcrypt.hash(req.body.password, 10,(err,hash)=>{
-                    userData.password=hash
-                    User.create(userData)
-                        .then(user =>
+                userData.password=hash
+                User.create(userData)
+                .then(user =>
+                {
+                    console.log("res.json({status: user.email+ ' registered'})");
+                    res.send("x1");
+                    var transporter = nodemailer.createTransport
+                    (
                         {
-                            console.log("res.json({status: user.email+ ' registered'})");
-                            res.send("x1")
-                            var transporter = nodemailer.createTransport({
-                                service: 'gmail',
-                                secure: false ,
-                                port : 25 ,
-                                auth: {
-                                    user: 'habibha.aroua82@gmail.com',
-                                    pass: 'habib.aroua@hotmail.framour88'
-                                }, tls: {
-                                    rejectUnauthorized: false
-                                }
-                            });
-                            //https://myaccount.google.com/lesssecureapps security
-                            var mailOptions = {
-                                from: 'habibha.aroua82@gmail.com',
-                                to: user.email,
-                                subject: 'Welcome to our group',
-                                text: 'Congratulations you are active member in our group'
-                            };
-
-                            transporter.sendMail(mailOptions, function(error, info){
-                                if (error) {
-                                    console.log(error);
-                                } else {
-                                    console.log('Email sent: ' + info.response);
-                                }
-                            });
+                            service: 'gmail',
+                            secure: false ,
+                            port : 25 ,
+                            auth: 
+                            {
+                                user: 'your_email',
+                                pass: 'your_password'
+                            }, 
+                            tls: 
+                            {
+                                rejectUnauthorized: false
+                            }
+                        }
+                    );
+                    //https://myaccount.google.com/lesssecureapps security
+                    var mailOptions = 
+                    {
+                        from: 'your_email',
+                        to: user.email,
+                        subject: 'Welcome to our group',
+                        text: 'Congratulations you are active member in our group'
+                    };
+                    transporter.sendMail(mailOptions, function(error, info){
+                    if (error) 
+                    {
+                        console.log(error);
+                    } 
+                    else 
+                    {
+                        console.log('Email sent: ' + info.response);
+                    }
+                    }
+                                        );
                         })
                 })
             }
