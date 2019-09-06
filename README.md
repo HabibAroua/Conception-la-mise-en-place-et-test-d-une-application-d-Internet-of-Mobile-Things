@@ -20,6 +20,4 @@
 
   <img src="Picture/9.png" />
 
-  <img src="Picture/10.png" />
-
 </center>
