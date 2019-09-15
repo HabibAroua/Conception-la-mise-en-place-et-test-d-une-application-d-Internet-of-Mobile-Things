@@ -6,9 +6,9 @@ class Login extends Component
 {
     login(user)
     {
-        return axios
+	    return axios
             .post('users/login',
-			{
+	    {
                 email : user.email,
                 password : user.password
             })
@@ -23,27 +23,26 @@ class Login extends Component
             })
     }
     constructor() 
-	{
-        super()
-        this.state =
+    {
+	    super()
+            this.state =
             {
-                email: '',
-                password: ''
+		    email: '',
+                    password: ''
             }
-
-        this.onChange = this.onChange.bind(this);
-        this.onSubmit = this.onSubmit.bind(this);
+	    this.onChange = this.onChange.bind(this);
+            this.onSubmit = this.onSubmit.bind(this);
     }
 
     onChange(e)
     {
-        this.setState({[e.target.name]: e.target.value})
+	    this.setState({[e.target.name]: e.target.value})
     }
 
     IsEmail(email)
     {
-        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(String(email).toLowerCase());
+	    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
     }
 
     onSubmit(e)
