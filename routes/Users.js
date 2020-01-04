@@ -82,29 +82,34 @@ users.post('/register',(req,res)=>
                         subject: 'Welcome to our group',
                         text: 'Congratulations you are active member in our group'
                     };
-                    transporter.sendMail(mailOptions, function(error, info){
-                    if (error) 
-                    {
-                        console.log(error);
-                    } 
-                    else 
-                    {
-                        console.log('Email sent: ' + info.response);
-                    }
-                    }
-                                        );
-                        })
+                    transporter.sendMail
+                    (
+                        mailOptions,
+                        function(error, info)
+                        {
+                            if (error) 
+                            {
+                                console.log(error);
+                            } 
+                            else 
+                            {
+                                console.log('Email sent: ' + info.response);
+                            }
+                        }
+                    );
                 })
-            }
-            else
-            {
-                res.send("x2");
-                console.log("error: User already exists");
-            }
-        })
-        .catch(err=>{
-            res.send('error: '+err)
-        })
+            })
+        }
+        else
+        {
+            res.send("x2");
+            console.log("error: User already exists");
+        }
+    })
+    .catch(err=>
+    {
+        res.send('error: '+err)
+    })
 })
 
 users.post('/login',(req,res)=>
@@ -123,9 +128,14 @@ users.post('/login',(req,res)=>
                 if(bcrypt.compareSync(req.body.password,user.password))
                 {
                     console.log("password is correct inst 1");
-                    let token = jwt.sign(user.dataValues,process.env.SECRET_KEY , {
-                        expiresIn: 1440
-                    })
+                    let token = jwt.sign
+                    (
+                        user.dataValues,
+                        process.env.SECRET_KEY , 
+                        {
+                            expiresIn: 1440
+                        }
+                    )
                     res.send(token)
                 }
                 else
