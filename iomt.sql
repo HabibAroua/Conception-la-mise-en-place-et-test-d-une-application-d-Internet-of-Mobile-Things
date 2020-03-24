@@ -28,7 +28,8 @@ SET time_zone = "+00:00";
 -- Structure de la table `notification`
 --
 
-CREATE TABLE `notification` (
+CREATE TABLE `notification` 
+(
   `id` int(11) NOT NULL,
   `title` varchar(40) DEFAULT NULL,
   `content` varchar(80) DEFAULT NULL,
@@ -50,7 +51,8 @@ INSERT INTO `notification` (`id`, `title`, `content`, `idu`, `ido`) VALUES
 -- Structure de la table `object`
 --
 
-CREATE TABLE `object` (
+CREATE TABLE `object` 
+(
   `id` int(11) NOT NULL,
   `wording` varchar(40) DEFAULT NULL,
   `state` int(11) DEFAULT NULL,
@@ -74,7 +76,8 @@ INSERT INTO `object` (`id`, `wording`, `state`, `latitude`, `longitude`) VALUES
 -- Structure de la table `users`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `users` 
+(
   `id` int(11) NOT NULL,
   `first_name` varchar(40) DEFAULT NULL,
   `last_name` varchar(40) DEFAULT NULL,
