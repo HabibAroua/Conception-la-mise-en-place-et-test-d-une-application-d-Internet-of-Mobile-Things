@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "apexcharts": "^3.6.11",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "google-maps-react": "^2.0.2",
     "jwt-decode": "^2.2.0",
     "react": "^16.8.6",
